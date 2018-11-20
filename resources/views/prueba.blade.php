@@ -1,4 +1,0 @@
-asfasf
-asdfads
-asdfadsas
-array_shift
