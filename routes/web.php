@@ -26,6 +26,7 @@ Route::get('/producto/create','ProductoController@create');
 Route::post('producto/create','ProductoController@guardar');
 Route::get('/producto/{id}','ProductoController@show')->name('producto');
 Route::get('/producto/{id}/edit','ProductoController@edit');
+Route::put('producto/{id}/edit','ProductoController@guardarCambios');
 Route::get('/producto/{id}/delete','ProductoController@delete');
 
 // nobasic - TIPO ES SU GENERICO INMEDIATO [MOCHILA-GORRO-ETC]
@@ -34,6 +35,7 @@ Route::get('/tipo/create','TipoController@create');
 Route::post('tipo/create','TipoController@guardar');
 Route::get('/tipo/{id}','TipoController@show')->name('tipo');
 Route::get('/tipo/{id}/edit','TipoController@edit');
+Route::put('tipo/{id}/edit','TipoController@guardarCambios');
 Route::get('/tipo/{id}/delete','TipoController@delete');
 
 // nobasic - CATEGORIA ES USO PROPUESTO [SPORTY - CITY - TECH]
@@ -42,6 +44,7 @@ Route::get('/categoria/create','CategoriaController@create');
 Route::post('categoria/create','CategoriaController@guardar');
 Route::get('/categoria/{id}','CategoriaController@show')->name('categoria');
 Route::get('/categoria/{id}/edit','CategoriaController@edit');
+Route::put('categoria/{id}/edit','CategoriaController@guardarCambios');
 Route::get('/categoria/{id}/delete','CategoriaController@delete');
 
 

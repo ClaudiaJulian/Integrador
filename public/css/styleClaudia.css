@@ -1,1 +1,21 @@
 /* nobasic - ARCHIVO DE TRABAJO DE CLAUDIA  */
+
+ul {
+    padding:0;
+}
+.container{
+    display:flex;
+    flex-direction:row;
+
+}
+.form{
+    flex-direction: column;
+    margin: 0px 20px;
+}
+
+.links{
+    Display:flex;
+    flex-direction: row;
+    background-color: aliceblue;
+    text-decoration:none;
+}

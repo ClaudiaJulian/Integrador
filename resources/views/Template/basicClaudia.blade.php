@@ -18,21 +18,20 @@
 <body>
   <div >
     <nav class="main-nav">
-    <p> 
+      <p> 
         nobasic
-    </p>
-    
+      </p>    
     </nav>
-    <main>
+    
+    <main class="container">
       @yield('content')
     </main>
+    
     <footer>
         <p>     
         nobasic
         </p>
-    
     </footer>
-    <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
   </div>
 </body>
 </html>

@@ -5,13 +5,16 @@ ES ADMINISTRATIVA  -->
 
 @section('content')
 
+<section>
+
+<h2>Crear Producto</h2>
+
 <ul class="errors">
 @foreach ($errors->all() as $error)
     <li>{{$error}}</li>    
 @endforeach
 </ul>
 
-<section>
 <form method="POST" id="nuevo" action="" name="nuevo" style="text-align: center;" enctype="multipart/form-data"> 
     @csrf  
     
@@ -35,9 +38,9 @@ ES ADMINISTRATIVA  -->
     
     <div>
     <label for="categoria_id">Categorias</label><br>     
-    <input type="checkbox" name="categoria_id" id="categoria_id" value="1">Urbano
-    <input type="checkbox" name="categoria_id" id="categoria_id" value="2">Sporty
-    <input type="checkbox" name="categoria_id" id="categoria_id" value="3">Tech       
+        @foreach($categorias as $cate)
+        <input type="checkbox" name="categoria_id[]" id="categoria_id" value="{{ $cate['id'] }}">{{ $cate['nombre'] }}
+        @endforeach      
     </div>
     
     <button type="submit" name="button">Create Product</button>
@@ -45,7 +48,9 @@ ES ADMINISTRATIVA  -->
 </form>
 
 <div class="index">          
-          <p ><a class="links" href="/categoria">Categorias</a></p>    
+    <p><a class="links" href="/producto">Productos</a></p> 
+    <p><a class="links" href="/tipo/create">Crear Tipos</a></p>
+    <p><a class="links" href="/categoria/create">Crear Categorias</a></p>  
 </div>
 
 </section>

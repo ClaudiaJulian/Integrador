@@ -7,28 +7,32 @@ ES ADMINISTRATIVA  -->
 
 <section class="content">
 
+
+<h2>Crear Categoria</h2>
+
 <ul class="errors">
-@foreach ($errors->all() as $error)
+    @foreach ($errors->all() as $error)
     <li>{{$error}}</li>    
-@endforeach
+    @endforeach
 </ul>
 
 <form method="POST" id="nuevo" action="" name="nuevo" style="text-align: center;" enctype="multipart/form-data"> 
     @csrf  
     
-    <label for="nombre">Nombre</label>
-    <input type="text" name="nombre" id="nombre" value="" >
-        
-    <label for="img">Foto</label>
-    <input type="file" name="img" id="img" value="">
-
+        <label for="img">Foto</label>
+        <input type="file" name="img" id="img" value="">
+     
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" value="" >
+   
     <button type="submit" name="button">Crear Categoria</button>
        
 </form>
 
 <div class="index">          
-          <p ><a class="links" href="/productos">Productos</a></p>    
-    
+    <p><a class="links" href="/categoria">Categorias</a></p> 
+    <p><a class="links" href="/producto/create">Crear Productos</a></p>
+    <p><a class="links" href="/tipo/create">Crear Tipos</a></p>  
 </div>
 
 </section>
