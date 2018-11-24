@@ -14,12 +14,12 @@
           <p ><a class="links" href="/tipo">Por Tipo</a></p>
     </div>
     
-    <div style="margin-top:20px;">
+    <div style="">
         <ul class="">             
         @foreach($categorias as $categ)
 
-        <li class="pokebutton">  
-            <a class="links" href="categoria/{{$categ['id']}}">
+        <li class="">  
+            <a class="" href="categoria/{{$categ['id']}}">
                 <h3> {{$categ['nombre']}} </h3>
                 <img src="{{ asset($categ->photo) }}"> 
             </a>

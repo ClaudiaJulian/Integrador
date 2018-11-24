@@ -16,12 +16,31 @@
     <link rel="stylesheet" href="{{asset('css/styleClaudia.css')}}">
 </head>
 <body>
-  <div >
-    <nav class="main-nav">
-      <p> 
-        nobasic
-      </p>    
-    </nav>
+<div class="flex-center position-ref full-height">
+  <div class="top-right">
+      @if(Auth::check())
+          <a href="{{ url('/home') }}">Home</a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+        </div>
+          @else
+          <a href="{{ route('login') }}">Login</a>
+          <a href="{{ route('register') }}">Register</a>
+      @endif
+  </div>
+ 
+
+  <!-- <nav class="">
+      <p>nobasic</p>    
+  </nav> -->
     
     <main class="container">
       @yield('content')

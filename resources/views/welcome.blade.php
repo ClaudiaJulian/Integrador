@@ -64,6 +64,7 @@
             }
         </style>
     </head>
+ <!-- INCORPORAR HTML Y MANTENER EL LOGIN/REGISTER -->
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))

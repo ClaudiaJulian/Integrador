@@ -14,16 +14,12 @@
     </div>
     
     <div style="margin-top:20px;">
-        <ul class="">             
+        <ul class="form">             
         @foreach($tipos as $tipo)
-
-        <li class="pokebutton">  
-            <a class="links" href="tipo/{{$tipo['id']}}">
-                <img src="{{ asset($tipo->photo) }}"> 
-                <h3> {{$tipo['nombre']}} </h3>
-            </a>
-        </li>
-     
+        <a class="" href="tipo/{{$tipo['id']}}">
+        <li style="list-style:none"><img src="{{ asset($tipo->photo) }}"></li> 
+        <li style="list-style:none"><h3> {{$tipo['nombre']}} </h3></li>
+        </a>
         @endforeach
         </ul>      
     </div> 

@@ -37,7 +37,7 @@ ES ADMINISTRATIVA  -->
     
     <div>
     <label for="categoria_id">Categorias</label><br>     
-    @foreach($categorias as $cate)
+        @foreach($categorias as $cate)
         <input type="checkbox" name="categoria_id[]" id="categoria_id" value="{{ $cate['id'] }}">{{ $cate['nombre'] }}
         @endforeach       
     </div>

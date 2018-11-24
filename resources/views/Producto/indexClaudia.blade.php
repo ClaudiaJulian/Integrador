@@ -16,8 +16,8 @@
         <ul class="">             
         @foreach($productos as $produc)
 
-        <li class="pokebutton">  
-            <a class="links" href="producto/{{$produc['id']}}">
+        <li class="">  
+            <a class="" href="producto/{{$produc['id']}}">
                 <img src="{{ asset($produc->photo) }}"> 
                 <h3> {{$produc['nombre']}} </h3>
                 <h3> {{$produc['precio']}} </h3>

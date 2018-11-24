@@ -12,20 +12,16 @@
           <p ><a class="links" href="/categoria">Por Categoria</a></p>
     </div>
 
-    <div style="margin-top:20px;">
-        <ul class="index">             
-        <li class="pokebutton">  
-            <a class="links" href="">
+    <div style="">
+        <ul class="form" style="margin:15px;">             
+         
             <img src="{{ asset($producto['photo']) }}"> 
-                <h3> {{$producto['nombre']}} </h3>
-                <h3> {{$producto['marca']}} </h3>
-                <h3> {{$producto['precio']}} </h3>
-            </a>
-        </li>
+            <li style="list-style:none"> {{ $producto['nombre'] ." - ". $producto->tipo->nombre }} </li>
+            <li style="list-style:none"> {{ $producto['marca'] }} </li>
+            <li style="list-style:none"> {{ $producto['precio'] }} </li>
+            <button type="submit">Comprar</button>
+        
         </ul>
-        <ul class="index">       
-            
-        </ul>      
     </div> 
 
     

@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 // NO MODIFICAR LA RUTAS
 // CUALQUIER COSA AGREGAR RUTAS A NUEVO MODELO Y NUEVO CONTROLADOR
-// POR EJEMPLO USUARIOS - CARRITO - ETC
+// POR EJEMPLO CARRITO - ETC
 //
 
 // nobasic - PRODUCTO ES EL ITEM EN SI MISMO
@@ -49,6 +49,6 @@ Route::get('/categoria/{id}/delete','CategoriaController@delete');
 
 
 
+Auth::routes();
 
-
-?>
+Route::get('/home', 'HomeController@index')->name('home');

@@ -13,6 +13,14 @@ class CategoriaController extends Controller
     return view('Categoria.indexClaudia')->with('categorias',$categorias);
     }
 
+    public function show($id){
+        $categoria=Categoria::find($id);
+        if( $categoria !== null){
+        return view('categoria.showClaudia')->with('categoria',$categoria);
+        }
+        return "No se ha encontrado el categoria de producto solicitado";
+    }
+
     public function create(){
         return view('categoria.create');
     }
