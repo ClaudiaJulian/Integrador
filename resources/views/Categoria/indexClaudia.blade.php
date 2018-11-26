@@ -21,7 +21,8 @@
         <li class="">  
             <a class="" href="categoria/{{$categ['id']}}">
                 <h3> {{$categ['nombre']}} </h3>
-                <img src="{{ asset($categ->photo) }}"> 
+                <img src="{{ asset($categ->photo) }}">
+                <h3><a class="" href="categoria/{{ $categ['id'] }}/edit"> Editar </a></h3> 
             </a>
         </li>
      

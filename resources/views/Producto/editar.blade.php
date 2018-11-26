@@ -32,6 +32,12 @@ ES ADMINISTRATIVA  -->
     <label for="tipo_id">Tipo_Id</label>
     <input type="number" name="tipo_id" id="tipo_id" value="{{ $producto->tipo_id }}">
  
+    <label for="stock">Stock</label>
+    <input type="number" name="stock" id="stock" value="{{ $producto->stock }}">
+
+    <label for="oferta">Oferta</label>
+    <input type="number" name="oferta" id="oferta" value="{{ $producto->oferta }}">
+    
     <label for="qVentas">Cantidad Ventas</label>
     <input type="number" name="qVentas" id="qVentas" value="{{ $producto->qVentas }}"><br><br>
     
@@ -46,8 +52,10 @@ ES ADMINISTRATIVA  -->
    
 </form>
 
-<div class="index">          
-          <p ><a class="links" href="/categoria">Categorias</a></p>    
+<div class="index">
+        <p ><a class="links" href="/producto">Productos</a></p>          
+        <p ><a class="links" href="/categoria">Categorias</a></p>
+        <p ><a class="links" href="/tipo">Tipos</a></p>    
 </div>
 
 </section>

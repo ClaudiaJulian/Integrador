@@ -32,6 +32,12 @@ ES ADMINISTRATIVA  -->
     
     <label for="tipo_id">Tipo_Id</label>
     <input type="number" name="tipo_id" id="tipo_id" value="">
+
+    <label for="stock">Stock</label>
+    <input type="number" name="stock" id="stock" value="">
+
+    <label for="oferta">Oferta</label>
+    <input type="number" name="oferta" id="oferta" value="">
  
     <label for="qVentas">Cantidad Ventas</label>
     <input type="number" name="qVentas" id="qVentas" value=""><br><br>

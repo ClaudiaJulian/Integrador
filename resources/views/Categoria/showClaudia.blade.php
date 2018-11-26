@@ -21,7 +21,7 @@
             <img src="{{ asset($produc['photo']) }}"> 
             <li style="list-style:none"> {{ $produc['nombre'] }} </li>
             <li style="list-style:none"> {{ $produc['marca'] }} </li>
-            <li style="list-style:none"> {{ $produc['precio'] }} </li>
+            <li style="list-style:none"> ${{ $produc['precio'] }} </li>
             <button type="submit">Comprar</button>
             </ul>
         @endforeach

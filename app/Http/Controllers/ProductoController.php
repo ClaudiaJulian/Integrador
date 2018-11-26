@@ -1,22 +1,41 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 use App\Producto;
 use App\Categoria;
+use App\User;
 
 class ProductoController extends Controller
 {
+
+    public function welcome(){
+        $sellers=Producto::where('id','>',0)->orderBy('qVentas','DESC')->take(4)->get();
+        $news=Producto::where('id','>',0)->orderBy('created_at','DESC')->take(4)->get();
+        $ofertas=Producto::where('oferta','>',0)->take(6)->get();
+
+        $categoria=Categoria::All();
+        
+        return view('welcome')->with('sellers',$sellers)->with('news',$news)->with('ofertas',$ofertas)->with('categoria',$categoria);
+    }
+
+    public function shop(){
+        return view('shop');
+    }
+
     public function index(){
         $productos=Producto::All();
-        return view('Producto.indexClaudia')->with('productos',$productos);
+        $user=Auth::user()->id;
+        return view('Producto.indexClaudia')->with('productos',$productos)->with('user',$user);
     }
 
     public function show($id){
         $producto=Producto::find($id);
+        $user=Auth::user()->id;
         if( $producto !== null){
-        return view('Producto.showClaudia')->with('producto',$producto);
+        return view('Producto.showClaudia')->with('producto',$producto)->with('user',$user);
         }
         return "No se ha encontrado el producto solicitado";
     }
@@ -37,6 +56,7 @@ class ProductoController extends Controller
         'marca' => 'required',
         'precio' => 'required',
         'tipo_id' => 'required',
+        'stock' => 'required',
         'categoria_id' => 'required',
         'qVentas' => 'required',
         'img' => 'required',
@@ -52,6 +72,8 @@ class ProductoController extends Controller
            'marca' => $request->input('marca'),
            'precio' => $request->input('precio'),
            'tipo_id' => $request->input('tipo_id'),
+           'stock'=> $request->input('stock'),
+           'oferta'=> $request->input('oferta'),
            'qVentas' => $request->input('qVentas'),
            'photo' => $path  
        ]);
@@ -80,6 +102,8 @@ class ProductoController extends Controller
         $producto->marca = $request->input('marca');
         $producto->precio = $request->input('precio');
         $producto->tipo_id = $request->input('tipo_id');
+        $producto->stock = $request->input('stock');
+        $producto->oferta = $request->input('oferta');
         $producto->qVentas = $request->input('qVentas');
 
         if ($request->has('img')) {
@@ -105,6 +129,8 @@ class ProductoController extends Controller
         
         return redirect('/producto/create');      
     }
+
+
 
 
 

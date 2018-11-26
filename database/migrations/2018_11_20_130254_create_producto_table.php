@@ -21,6 +21,8 @@ class CreateProductoTable extends Migration
             $table->integer('tipo_id');
             $table->integer('qVentas');
             $table->string('photo');
+            $table->integer('stock');
+            $table->integer('descuento');
             $table->timestamps();
         });
     }

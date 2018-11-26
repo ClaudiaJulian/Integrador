@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('template.basicClaudia')
 
 @section('content')
 <div class="container">

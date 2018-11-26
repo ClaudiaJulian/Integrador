@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome'); /* devuelve el home */
-});
+Route::get('/', 'ProductoController@welcome');
+Route::get('/shop', 'ProductoController@shop');
+Route::get('/faq', 'HomeController@faq');
+Route::get('/shop', 'HomeController@index')->name('shop');
 
 // NO MODIFICAR LA RUTAS
 // CUALQUIER COSA AGREGAR RUTAS A NUEVO MODELO Y NUEVO CONTROLADOR
@@ -24,6 +25,7 @@ Route::get('/', function () {
 Route::get('/producto','ProductoController@index');
 Route::get('/producto/create','ProductoController@create');
 Route::post('producto/create','ProductoController@guardar');
+Route::get('/producto/news','ProductoController@welcome');
 Route::get('/producto/{id}','ProductoController@show')->name('producto');
 Route::get('/producto/{id}/edit','ProductoController@edit');
 Route::put('producto/{id}/edit','ProductoController@guardarCambios');
@@ -47,8 +49,23 @@ Route::get('/categoria/{id}/edit','CategoriaController@edit');
 Route::put('categoria/{id}/edit','CategoriaController@guardarCambios');
 Route::get('/categoria/{id}/delete','CategoriaController@delete');
 
+// nobasic - CARRO DE COMPRAS
+Route::get('/carro','CarroController@show');
+Route::get('/carro/create','CarroController@create');
+Route::get('/carro/edit','CarroController@edit');
+Route::get('/carro/trash','CarroController@trash');
+Route::get('/carro/total','CarroController@total');
+Route::get('/carro/pagar','CarroController@pagar');
+
+// Route::bind('producto', function($slug){
+//     Return App\Producto::where('slug',$slug)->first();
+// });
+Route::get('/carro/add/{id}','CarroController@add');
+
+
+
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
