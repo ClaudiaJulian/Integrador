@@ -1,82 +1,38 @@
-@extends('template.basicClaudia')
+@extends('template.basic')
 
 @section('content')
     <main class="Shop">
         <section class="BannerShop">
             <h1>Productos</h1>
         </section>
-        
-		<!-- <div class="leyendaShop">
-		<p class="leyenda1"> Próximamente todos tus Accesorios </p>
-        </div> -->
-        
+       
         <div class="ShopCont">
             <section class="">
-                <article class="ShopTipos">
-                    <ul>
-                        <li><a href="">Urban</a></li>
-                        <li><a href="">Sporty</a></li>
-                        <li><a href="">Tech</a></li>
-                    </ul>
-                </article>
-
-                <article class="CategoriasN">
-                    <h3>Categorias</h3>
-                    <a href="">Gorras</a>
-                    <a href="">Camaras</a>
-                    <a href="">mochilas</a>
-                </article>
+                @foreach($categoria as $categ)
+                    <article class="ShopTipos">    
+                        <ul>
+                            <li><a href="categoria/{{$categ['id']}}" style="width:15vw">{{$categ['nombre']}}</a></li>
+                        </ul>                                             
+                    </article>
+                @endforeach  
+                <h3>Tipos</h3>
+                @foreach($tipo as $tip)
+                    <article class="CategoriasN">
+                          <li style="list-style: none"><a href="tipo/{{$tip['id']}}" style="width:15vw;text-decoration:none">{{$tip['nombre']}}</a></li>    
+                    </article>
+                @endforeach
             </section>
 
             <section class="ProductosN">
-                <article class="ProducS">
-                    <img src="imagenes/imgnone.jpg" alt="">
-
-                    <div class="ProdDescrip">
-                        <h3>Producto</h3>
-                        <p><span class="oldPrice">$900</span>$700</p>
-                    </div>
-                </article>
-                <article class="ProducS">
-                    <img src="imagenes/imgnone.jpg" alt="">
-
-                    <div class="ProdDescrip">
-                        <h3>Producto</h3>
-                        <p><span class="oldPrice">$900</span>$700</p>
-                    </div>
-                </article>
-                <article class="ProducS">
-                    <img src="imagenes/imgnone.jpg" alt="">
-
-                    <div class="ProdDescrip">
-                        <h3>Producto</h3>
-                        <p><span class="oldPrice">$900</span>$700</p>
-                    </div>
-                </article>
-                <article class="ProducS">
-                    <img src="imagenes/imgnone.jpg" alt="">
-
-                    <div class="ProdDescrip">
-                        <h3>Producto</h3>
-                        <p><span class="oldPrice">$900</span>$700</p>
-                    </div>
-                </article>
-                <article class="ProducS">
-                    <img src="imagenes/imgnone.jpg" alt="">
-
-                    <div class="ProdDescrip">
-                        <h3>Producto</h3>
-                        <p><span class="oldPrice">$900</span>$700</p>
-                    </div>
-                </article>
-                <article class="ProducS">
-                    <img src="imagenes/imgnone.jpg" alt="">
-
-                    <div class="ProdDescrip">
-                        <h3>Producto</h3>
-                        <p><span class="oldPrice">$900</span>$700</p>
-                    </div>
-                </article>
+                @foreach($ofertas as $ofer)
+                    <article class="ProducS">
+                        <img src="{{ asset($ofer['photo']) }}"> 
+                        <div class="ProdDescrip"> 
+                            <h3> {{ $ofer['marca'] }} </h3>
+                            <p><span class="oldPrice">${{ $ofer['precio'] }}</span>  ${{ $ofer['precio'] * $ofer['oferta']/100 }}</p>    
+                        </div>
+                    </article>
+                @endforeach                            
             </section>
         </div>
 

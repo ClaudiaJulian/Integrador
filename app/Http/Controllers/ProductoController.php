@@ -28,7 +28,7 @@ class ProductoController extends Controller
     public function index(){
         $productos=Producto::All();
         $user=Auth::user()->id;
-        return view('Producto.indexClaudia')->with('productos',$productos)->with('user',$user);
+        return view('Producto.index')->with('productos',$productos)->with('user',$user);
     }
 
     public function show($id){

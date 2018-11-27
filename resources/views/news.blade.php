@@ -1,4 +1,4 @@
-@extends('Template.basicClaudia')
+@extends('Template.basic')
 
 @section('content')
 

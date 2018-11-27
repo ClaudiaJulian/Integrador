@@ -5,18 +5,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Categoria;
 use App\Producto;
+use App\Tipo;
 
 class CategoriaController extends Controller
 {
     public function index(){
     $categorias=Categoria::All();
-    return view('Categoria.indexClaudia')->with('categorias',$categorias);
+    return view('Categoria.index')->with('categorias',$categorias);
     }
 
     public function show($id){
         $categoria=Categoria::find($id);
+        $tipo=Tipo::All();
+        $categorias=Categoria::All();
+
         if( $categoria !== null){
-        return view('categoria.showClaudia')->with('categoria',$categoria);
+        return view('categoria.show')->with('categoria',$categoria)->with('tipo',$tipo)->with('categorias',$categorias);
         }
         return "No se ha encontrado el categoria de producto solicitado";
     }

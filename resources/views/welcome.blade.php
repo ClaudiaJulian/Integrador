@@ -1,5 +1,5 @@
 <!-- nobasic - ESTE SERIA NUESTRO HOME  -->
-@extends('Template.basicClaudia')
+@extends('Template.basic')
 
 @section('content')
 <main>
@@ -9,7 +9,7 @@
         
         <div class="BannerInfo">
             <h1> Accesorios Urbanos Sporty & Tech </h1>
-            <a href="shop.html">Shop now</a>
+            <a href="/shop">Shop now</a>
         </div>
     </section>
     <!-- FIN BANNER -->
@@ -57,7 +57,7 @@
             </div>
 
             <div class="botonSale">
-                <a href="">Shop Now</a>
+                <a href="/shop">Shop Now</a>
             </div>
         </article>
     </section>

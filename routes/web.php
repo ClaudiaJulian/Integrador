@@ -12,14 +12,15 @@
 */
 
 Route::get('/', 'ProductoController@welcome');
-Route::get('/shop', 'ProductoController@shop');
-Route::get('/faq', 'HomeController@faq');
-Route::get('/shop', 'HomeController@index')->name('shop');
+Route::get('/shop', 'Controller@shop');
+Route::get('/nav/faq', 'Controller@faq');
+Route::get('/nav/contacto', 'Controller@contacto');
+Route::get('/perfil/{id}/edit', 'UserController@edit');
+Route::put('/perfil/{id}/edit', 'UserController@guardarCambios');
 
 // NO MODIFICAR LA RUTAS
 // CUALQUIER COSA AGREGAR RUTAS A NUEVO MODELO Y NUEVO CONTROLADOR
-// POR EJEMPLO CARRITO - ETC
-//
+
 
 // nobasic - PRODUCTO ES EL ITEM EN SI MISMO
 Route::get('/producto','ProductoController@index');

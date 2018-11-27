@@ -1,16 +1,14 @@
-<!-- nobasic - DE ESTA VISTA SE ENCARGA CLAUDIA
-ES ADMINISTRATIVA  -->
 
-@extends('Template.basicClaudia')
+@extends('Template.Admin')
 
 @section('content')
 
 <section class="content">
-
+<h1>Esta sección es Administrativa </h1>
 <ul class="errors">
-@foreach ($errors->all() as $error)
+    @foreach ($errors->all() as $error)
     <li>{{$error}}</li>    
-@endforeach
+    @endforeach
 </ul>
 
 <form method="POST" id="nuevo" action="" name="nuevo" style="text-align: center;" enctype="multipart/form-data"> 

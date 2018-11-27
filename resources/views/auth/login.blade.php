@@ -1,5 +1,5 @@
-{{-- @extends('layouts.app') --}}
-@extends('template.basicClaudia')
+
+@extends('template.basic')
 
 @section('content')
 <div class="container">

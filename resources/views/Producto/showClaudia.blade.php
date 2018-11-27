@@ -1,15 +1,14 @@
-<!-- nobasic - ARCHIVO DE TRABAJO DE CLAUDIA  -->
-@extends('Template.basicClaudia')
+
+@extends('Template.Admin')
 
 @section('content')
 
 <section class="content" >
+    <h1>Esta sección es Administrativa </h1>
     <h2 class="titulo">Productos</h2>
 
     <div class="index">          
-          <p ><a class="links" href="/producto">Todos los Productos</a></p>    
-          <p ><a class="links" href="/tipo">Por Tipo</a></p>
-          <p ><a class="links" href="/categoria">Por Categoria</a></p>
+          <p ><a class="links" href="/shop">Todos los Productos</a></p>    
     </div>
 
     <div style="">

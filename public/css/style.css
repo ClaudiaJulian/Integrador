@@ -1068,22 +1068,22 @@ footer {
         order: 3;
     }
 
-    .buscador-completo {
+     .buscador-completo {
         position: unset;
-        width: 30px;
+        width: 20vw;
         order: 4;
     }
 
-    .buscador-completo input {
-        display: none;
-    }
+     .buscador-completo input { 
+       /*display: none; */
+     }
 
     .buscador-completo button {
         order: 4;
-        width: 20px;
+        width: 15%;
         padding: 5px;
-        margin-right: 20px;
-    }
+         margin-right: 20px;
+    } 
 
     /* --- FIN DE HEADER --- */
 

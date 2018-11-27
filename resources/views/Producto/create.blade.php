@@ -1,12 +1,10 @@
-<!-- nobasic - DE ESTA VISTA SE ENCARGA CLAUDIA
-ES ADMINISTRATIVA  -->
 
-@extends('Template.basicClaudia')
+@extends('Template.Admin')
 
 @section('content')
 
 <section>
-
+<h1>Esta sección es Administrativa </h1>
 <h2>Crear Producto</h2>
 
 <ul class="errors">

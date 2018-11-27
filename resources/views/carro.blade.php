@@ -1,7 +1,7 @@
 <!-- nobasic - DE ESTA VISTA SE ENCARGA CLAUDIA
 ES ADMINISTRATIVA  -->
 
-@extends('Template.basicClaudia')
+@extends('Template.basic')
 
 @section('content')
 <ul class="errors">

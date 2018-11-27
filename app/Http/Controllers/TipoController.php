@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Tipo;
 use App\Producto;
+use App\Categoria;
 
 class TipoController extends Controller
 {
@@ -12,13 +13,16 @@ class TipoController extends Controller
 
     public function index(){
         $tipos=Tipo::All();
-        return view('Tipo.indexClaudia')->with('tipos',$tipos);
+        return view('Tipo.index')->with('tipos',$tipos);
     }
 
     public function show($id){
         $tipo=Tipo::find($id);
+        $tipos=Tipo::All();
+        $categorias=Categoria::All();
+
         if( $tipo !== null){
-        return view('tipo.showClaudia')->with('tipo',$tipo);
+        return view('tipo.show')->with('tipo',$tipo)->with('tipos',$tipos)->with('categorias',$categorias);
         }
         return "No se ha encontrado el tipo de producto solicitado";
     }
