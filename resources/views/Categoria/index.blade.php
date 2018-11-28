@@ -1,7 +1,3 @@
-<!-- nobasic - ARCHIVO DE TRABAJO DE CLAUDIA  -->
-
-<!-- nobasic - AREA DE TRABAJO DE CLAUDIA  -->
-
 @extends('Template.Admin')
 
 @section('content')

@@ -27,7 +27,7 @@
 </form>
 
 <div class="index">          
-          <p ><a class="links" href="/tipo">Tipos</a></p>    
+          <p ><a class="links" href="/admin">Productos</a></p>    
 </div>
 
 </section>

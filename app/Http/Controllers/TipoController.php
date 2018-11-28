@@ -9,8 +9,7 @@ use App\Categoria;
 
 class TipoController extends Controller
 {
-    protected $guarded = [];
-
+// A LAS VISTAS AL USUARIO & GUEST
     public function index(){
         $tipos=Tipo::All();
         return view('Tipo.index')->with('tipos',$tipos);
@@ -27,6 +26,17 @@ class TipoController extends Controller
         return "No se ha encontrado el tipo de producto solicitado";
     }
 
+// A LAS VISTAS DEL ADMIN
+    public function showAdmin($id){
+    $tipo=Tipo::find($id);
+    $tipos=Tipo::All();
+    $categorias=Categoria::All();
+
+    if( $tipo !== null){
+    return view('tipo.showAdmin')->with('tipo',$tipo)->with('tipos',$tipos)->with('categorias',$categorias);
+    }
+    return "No se ha encontrado el tipo de producto solicitado";
+    }
 
     public function create(){
         return view('tipo.create');
@@ -78,7 +88,7 @@ class TipoController extends Controller
 
         $tipo->save();
 
-        return redirect('/tipo/create');                    
+        return redirect('/admin');                    
     }
 
     public function delete($id)
@@ -86,7 +96,7 @@ class TipoController extends Controller
         $tipo = Tipo::find($id);
         $tipo->delete();
         
-        return redirect('/tipo/create');      
+        return redirect('/admin');      
     }
 
 

@@ -1,5 +1,3 @@
-<!-- nobasic - ARCHIVO DE TRABAJO DE CLAUDIA  -->
-
 @extends('template.basic')
 
 @section('content')
@@ -9,6 +7,11 @@
     </section>  
         <div class="ShopCont">
             <section class="">
+                <article class="ShopTipos">
+                    <ul>
+                        <li><a href="/producto" style="width:15vw">Todos</a></li>
+                    </ul> 
+                </article>  
                 @foreach($categorias as $cat)
                     <article class="ShopTipos">    
                         <ul>
@@ -27,7 +30,7 @@
     <section class="ProductosN">
     @foreach($tipo->producto as $produc)
         <article class="ProducS">              
-            <img src="{{ asset($produc['photo']) }}"> 
+           <a href="../producto/{{$produc['id']}}"><img src="{{ asset($produc['photo']) }}"></a> 
             <div class="ProdDescrip">
                 <h3> {{ $produc['nombre'] ." - ". $produc->tipo->nombre }} </h3>
                 <h3> {{ $produc['marca'] }} </li>

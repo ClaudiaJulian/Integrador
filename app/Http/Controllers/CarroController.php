@@ -25,15 +25,13 @@ class CarroController extends Controller
 
     public function show(){
         $carro = \Session::get('carro');
-       
         return view('carro');
     }
 
     public function add($id){
         $carro = \Session::get('carro');
         $producto = Producto::find($id);
-       $carro[] = $producto;
-       
+        $carro[] = $producto;
         \Session::put('carro',$carro);
         return view('carro')->with('carro',$carro);
     }

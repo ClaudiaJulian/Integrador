@@ -8,17 +8,23 @@
        
         <div class="ShopCont">
             <section class="">
+                <article class="ShopTipos">
+                        <ul>
+                            <li><a href="/producto" style="width:15vw">Todos</a></li>
+                        </ul> 
+                </article>    
+
                 @foreach($categoria as $categ)
                     <article class="ShopTipos">    
                         <ul>
-                            <li><a href="categoria/{{$categ['id']}}" style="width:15vw">{{$categ['nombre']}}</a></li>
+                            <li><a href="/categoria/{{$categ['id']}}" style="width:15vw">{{$categ['nombre']}}</a></li>
                         </ul>                                             
                     </article>
                 @endforeach  
                 <h3>Tipos</h3>
                 @foreach($tipo as $tip)
                     <article class="CategoriasN">
-                          <li style="list-style: none"><a href="tipo/{{$tip['id']}}" style="width:15vw;text-decoration:none">{{$tip['nombre']}}</a></li>    
+                          <li style="list-style: none"><a href="/tipo/{{$tip['id']}}" style="width:15vw;text-decoration:none">{{$tip['nombre']}}</a></li>    
                     </article>
                 @endforeach
             </section>
@@ -26,7 +32,7 @@
             <section class="ProductosN">
                 @foreach($ofertas as $ofer)
                     <article class="ProducS">
-                        <img src="{{ asset($ofer['photo']) }}"> 
+                        <a href="producto/{{$ofer['id']}}"><img src="{{ asset($ofer['photo']) }}"></a> 
                         <div class="ProdDescrip"> 
                             <h3> {{ $ofer['marca'] }} </h3>
                             <p><span class="oldPrice">${{ $ofer['precio'] }}</span>  ${{ $ofer['precio'] * $ofer['oferta']/100 }}</p>    

@@ -9,7 +9,7 @@ ES ADMINISTRATIVA  -->
     <li>{{$error}}</li>    
 @endforeach
 </ul>
-
+<?php dd($carro);?>
 <section>
 <form method="POST" id="nuevo" action="" name="nuevo" style="text-align: center;" enctype="multipart/form-data"> 
     @csrf

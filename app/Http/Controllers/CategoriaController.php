@@ -9,6 +9,8 @@ use App\Tipo;
 
 class CategoriaController extends Controller
 {
+// A LAS VISTAS AL USUARIO & GUEST
+
     public function index(){
     $categorias=Categoria::All();
     return view('Categoria.index')->with('categorias',$categorias);
@@ -23,6 +25,19 @@ class CategoriaController extends Controller
         return view('categoria.show')->with('categoria',$categoria)->with('tipo',$tipo)->with('categorias',$categorias);
         }
         return "No se ha encontrado el categoria de producto solicitado";
+    }
+
+// A LAS VISTAS DEL ADMIN
+
+    public function showAdmin($id){
+    $categoria=Categoria::find($id);
+    $tipo=Tipo::All();
+    $categorias=Categoria::All();
+
+    if( $categoria !== null){
+    return view('categoria.showAdmin')->with('categoria',$categoria)->with('tipo',$tipo)->with('categorias',$categorias);
+    }
+    return "No se ha encontrado el categoria de producto solicitado";
     }
 
     public function create(){
@@ -49,7 +64,7 @@ class CategoriaController extends Controller
            'photo' => $path  
        ]);
        
-       return redirect('/categoria/create');
+       return redirect('/admin');
     }
 
     public function edit($id){
@@ -75,7 +90,7 @@ class CategoriaController extends Controller
 
         $categoria->save();
 
-        return redirect('/categoria/create');                    
+        return redirect('/admin');                    
     }    
     
     public function delete($id)
@@ -83,7 +98,7 @@ class CategoriaController extends Controller
         $categoria = Categoria::find($id);
         $categoria->delete();
         
-        return redirect('/categoria/create');      
+        return redirect('/admin');      
     }
 
 

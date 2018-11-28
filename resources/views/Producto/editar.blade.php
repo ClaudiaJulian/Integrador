@@ -48,11 +48,11 @@
     </div>
     
     <button type="submit" name="button">Editar Producto</button>
-   
+    
 </form>
 
 <div class="index">
-        <p ><a class="links" href="/producto">Productos</a></p>          
+        <p ><a class="links" href="/admin">Productos</a></p>          
         <p ><a class="links" href="/categoria">Categorias</a></p>
         <p ><a class="links" href="/tipo">Tipos</a></p>    
 </div>

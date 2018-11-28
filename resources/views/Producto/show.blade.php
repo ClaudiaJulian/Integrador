@@ -27,22 +27,16 @@
                     </article>
                 @endforeach
             </section>
-
-            <section class="ProductosN">       
-             @foreach($productos as $produc)
-                <article class="ProducS">   
-                <a class="" href="producto/{{$produc['id']}}">
-                     <img src="{{ asset($produc->photo) }}"></a> 
-                     <h3> {{$produc['nombre']}} </h3>
-                     <h3> ${{$produc['precio']}} </h3>
-                   
-                    <button><a href="carro/add/{{$produc['id']}}">Comprar </a></button>
-                {{-- <h3><a class="" href="producto/{{ $produc['id'] }}/edit"> Editar </a></h3> --}}
-                
-                </article>      
-            @endforeach
-            </section>
-         
-    
+        
+            <section class="ProductosN">  
+                <article class="ProducS">            
+                    <img src="{{ asset($producto['photo']) }}"> 
+                    <h3> {{ $producto['nombre'] ." - ". $producto->tipo->nombre }} </h3>
+                    <h3> {{ $producto['marca'] }} </h3>
+                    <h3> ${{ $producto['precio'] }} </h3>
+                 <button type="submit"><a href="carro/{{ $producto->slug}}">Comprar</a></button>        
+                </article>
+            </section> 
+        </div>   
 </main>
 @endsection

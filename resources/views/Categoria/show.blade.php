@@ -8,6 +8,11 @@
        
         <div class="ShopCont">
             <section class="">
+                <article class="ShopTipos">
+                    <ul>
+                        <li><a href="/producto" style="width:15vw">Todos</a></li>
+                    </ul> 
+                </article>  
                 @foreach($categorias as $cat)
                     <article class="ShopTipos">    
                         <ul>
@@ -26,7 +31,7 @@
             <section class="ProductosN">
             @foreach($categoria->producto as $produc)
             <article class="ProducS">  
-                <img src="{{ asset($produc['photo']) }}"> 
+                <a href="producto/{{$produc['id']}}"><img src="{{ asset($produc['photo']) }}"></a> 
                 <div class="ProdDescrip"> 
                     <h3 style=""> {{ $produc['nombre'] }} </h3>
                     <h3 style=""> {{ $produc['marca'] }} </h3>

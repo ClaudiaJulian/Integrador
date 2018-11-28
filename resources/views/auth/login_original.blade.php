@@ -1,8 +1,8 @@
+
 @extends('template.basic')
 
 @section('content')
-<main class="mainform">
-<!-- <div class="container">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -68,67 +68,5 @@
             </div>
         </div>
     </div>
-</div> -->
-
-<section class="Formulario">
-
-    <article class="TextLog"><h2>{{ __('Login') }}</h2></article>
-
-    <article class="ContForm">
-        <form method="POST" action="{{ route('login') }}">
-        @csrf                    
-
-        <article class="form-group form-group2">
-            <label for="email" class="">{{ __('E-Mail Address') }}</label><br>
-
-            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
-            @if ($errors->has('email'))
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('email') }}</strong>
-                </span>
-            @endif
-        </article>
-
-        <article class="form-group form-group2">
-            <label for="password" class="">{{ __('Password') }}</label><br>
-
-        <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-            @if ($errors->has('password'))
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('password') }}</strong>
-                </span>
-            @endif
-        </article>
-
-        <article class="form-group">
-            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-            <label class="form-check-label" for="remember">
-                {{ __('Remember Me') }}
-            </label>
-        </article>
-
-        <article class="form-group">
-            <button type="submit" class="">
-                {{ __('Ingresar') }}
-            </button><br>
-            <a class="textOlvido" href="{{ route('password.request') }}">
-                {{ __('Olvidaste la contraseña?') }}
-            </a>
-        </article>
-
-        </form>
-    </article>
-</section>
-
-
-
-
-
-
-
-
-</main>
+</div>
 @endsection

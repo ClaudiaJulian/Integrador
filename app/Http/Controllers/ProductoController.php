@@ -6,10 +6,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Producto;
 use App\Categoria;
+use App\Tipo;
 use App\User;
 
 class ProductoController extends Controller
 {
+// A LAS VISTAS AL USUARIO & GUEST
 
     public function welcome(){
         $sellers=Producto::where('id','>',0)->orderBy('qVentas','DESC')->take(4)->get();
@@ -27,17 +29,28 @@ class ProductoController extends Controller
 
     public function index(){
         $productos=Producto::All();
-        $user=Auth::user()->id;
-        return view('Producto.index')->with('productos',$productos)->with('user',$user);
+        $tipo=Tipo::All();
+        $categorias=Categoria::All();
+        return view('Producto.index')->with('productos',$productos)->with('tipo',$tipo)->with('categorias',$categorias);
     }
 
     public function show($id){
         $producto=Producto::find($id);
-        $user=Auth::user()->id;
+        $tipo=Tipo::All();
+        $categorias=Categoria::All();
         if( $producto !== null){
-        return view('Producto.showClaudia')->with('producto',$producto)->with('user',$user);
+        return view('Producto.show')->with('producto',$producto)->with('tipo',$tipo)->with('categorias',$categorias);
         }
         return "No se ha encontrado el producto solicitado";
+    }
+
+// A LAS VISTAS DE ADMIN
+
+    public function indexAdmin(){
+        $productos=Producto::All();
+        $tipo=Tipo::All();
+        $categorias=Categoria::All();
+        return view('Producto.indexAdmin')->with('productos',$productos)->with('tipo',$tipo)->with('categorias',$categorias);
     }
 
     public function create(){
@@ -79,7 +92,7 @@ class ProductoController extends Controller
        ]);
        $producto->categoria()->sync($request->input('categoria_id'));
        
-       return redirect('/producto/create');
+       return redirect('/admin');
     }
 
     public function edit($id)
@@ -115,7 +128,7 @@ class ProductoController extends Controller
         $producto->save();
         $producto->categoria()->sync($request->input('categoria_id'));
 
-        return redirect('/producto/create');
+        return redirect('/admin');
                     
         } else {
             return "no se ha encontrado el producto solicitado";
@@ -127,7 +140,7 @@ class ProductoController extends Controller
         $tipo = Producto::find($id);
         $tipo->delete();
         
-        return redirect('/producto/create');      
+        return redirect('/admin');      
     }
 
 
