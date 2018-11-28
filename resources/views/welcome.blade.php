@@ -16,7 +16,7 @@
 
     <section class="IntroText">
         <article>
-            <h2>Inspirado Para Los Hombres</h2>
+            <h2>Inspirado Para Los Mujeres</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat doloremque quos quam, delectus sed blanditiis.</p>
             <p class="lineatxt"></p>
         </article>
