@@ -37,7 +37,7 @@
                      <h3> ${{$produc['precio']}} </h3>
                    
                     <button><a href="carro/add/{{$produc['id']}}">Comprar </a></button>
-                {{-- <h3><a class="" href="producto/{{ $produc['id'] }}/edit"> Editar </a></h3> --}}
+            
                 
                 </article>      
             @endforeach

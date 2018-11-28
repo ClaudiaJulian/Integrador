@@ -24,7 +24,7 @@
                 <h3>Tipos</h3>
                 @foreach($tipo as $tip)
                     <article class="CategoriasN">
-                          <li style="list-style: none"><a href="/tipo/{{$tip['id']}}" style="width:15vw;text-decoration:none">{{$tip['nombre']}}</a></li>    
+                          <li style="list-style: none"><a href="/tipo/{{$tip['id']}}" style="width:15vw;text-decoration:none">{{$tip['nombre']}}</a></li>                             
                     </article>
                 @endforeach
             </section>
@@ -36,6 +36,7 @@
                         <div class="ProdDescrip"> 
                             <h3> {{ $ofer['marca'] }} </h3>
                             <p><span class="oldPrice">${{ $ofer['precio'] }}</span>  ${{ $ofer['precio'] * $ofer['oferta']/100 }}</p>    
+                            <button><a href="carro/add/{{$ofer['id']}}">Comprar </a></button>   
                         </div>
                     </article>
                 @endforeach                            

@@ -22,7 +22,7 @@ class CreateProductoTable extends Migration
             $table->integer('qVentas');
             $table->string('photo');
             $table->integer('stock');
-            $table->integer('descuento');
+            $table->integer('oferta');
             $table->timestamps();
         });
     }

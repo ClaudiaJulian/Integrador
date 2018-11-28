@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Producto;
+use App\Carro;
 
 class CarroController extends Controller
 {
@@ -25,15 +26,18 @@ class CarroController extends Controller
 
     public function show(){
         $carro = \Session::get('carro');
-        return view('carro');
+        return view('carro')->with('carro',$carro);
     }
 
     public function add($id){
         $carro = \Session::get('carro');
         $producto = Producto::find($id);
         $carro[] = $producto;
+        
         \Session::put('carro',$carro);
-        return view('carro')->with('carro',$carro);
+        //    dd(\Session::get('carro'));
+        // return view('carro')->with('carro',$carro);
+        return view('carro');
     }
 
     public function edit(){
