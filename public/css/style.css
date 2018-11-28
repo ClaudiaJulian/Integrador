@@ -147,7 +147,7 @@ input::placeholder {
 /* ---  BANNER ---- */
 .banner {
     height: 300px;
-    background-image: url("../storage/img_banner/banner.png");
+    background-image: url("../image/banner.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -404,7 +404,7 @@ input::placeholder {
 /* -BANNER PRODUCTS- */
 .BannerProduct {
     height: 250px;
-    background-image: url("../imagenes/bannerProduct.jpg");
+    background-image: url("../image/bannerProduct.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -1138,12 +1138,8 @@ footer {
 
     .buscador-completo {
         position: unset;
-        width: 30px;
+        width: 20vw;
         order: 4;
-    }
-
-    .buscador-completo input {
-        display: none;
     }
 
     .buscador-completo button {
@@ -1434,7 +1430,7 @@ footer {
 
 	.BannerShop{
 		height: 300px;
-	background-image: url("../storage/img_banner/banner4.jpg");
+	background-image: url("../image/banner4.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;

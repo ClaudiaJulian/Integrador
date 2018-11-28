@@ -52,9 +52,7 @@
 </form>
 
 <div class="index">          
-    <p><a class="links" href="/producto">Productos</a></p> 
-    <p><a class="links" href="/tipo/create">Crear Tipos</a></p>
-    <p><a class="links" href="/categoria/create">Crear Categorias</a></p>  
+    <p><a class="links" href="/admin">Productos</a></p> 
 </div>
 
 </section>

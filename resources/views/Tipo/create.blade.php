@@ -27,9 +27,7 @@
 </form>
 
 <div class="">          
-    <p><a class="links" href="/tipo">Tipos</a></p> 
-    <p><a class="links" href="/producto/create">Crear Productos</a></p>
-    <p><a class="links" href="/categoria/create">Crear Categorias</a></p>  
+    <p><a class="links" href="/admin">Productos</a></p>   
 </div>
 
 </section>

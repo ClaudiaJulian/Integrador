@@ -17,7 +17,7 @@
     <header class="main-header">
         <nav class="nav-logo-icon">
             <div class="cajalogo">
-                    <img src="{{ asset('storage/logo.png') }}" alt="logotipo" class="logo">
+                    <img src="{{ asset('/logo.png') }}" alt="logotipo" class="logo">
             </div>
 
             <div class="nav-iconos">

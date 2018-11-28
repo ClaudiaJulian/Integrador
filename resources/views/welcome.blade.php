@@ -16,7 +16,7 @@
 
     <section class="IntroText">
         <article>
-            <h2>Inspirado Para Los Mujeres</h2>
+            <h2>Inspirado En Los Hombres</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat doloremque quos quam, delectus sed blanditiis.</p>
             <p class="lineatxt"></p>
         </article>
@@ -64,7 +64,7 @@
 
     <section class="ContenidoSale">
         <article class="ImgSale">
-            <img class="" src="/storage/img_banner/bannerSale.jpg" alt="HOLA">
+            <img class="" src="../image/bannerSale.jpg" alt="HOLA">
             <div class="Descuentos">
                 <p>30%</p>
                 <p>40%</p>
@@ -100,7 +100,7 @@
 
         <div class="ContenidoNew">
             <article class="ImgNew">
-                <img src="/storage/img_banner/bannerNew.jpg" alt="">
+                <img src="/image/bannerNew.jpg" alt="">
                 <article>
                     <a href="">More Products</a>               
                 </article>
@@ -128,7 +128,7 @@
     
         <div class="ContenidoNew">
             <article class="ImgNew">
-                <img src="/storage/img_banner/bannerBestS.jpg" alt="">
+                <img src="/image/bannerBestS.jpg" alt="">
                 <article>
                     <a href="">More Products</a>
                 </article>
@@ -160,11 +160,11 @@
     <!--  MARCAS  -->
     <section class="Marcas">
         <div class="LogosMarcas">
-            <article><img src="imagenes/marcas/brand.png" alt=""></article>
-            <article><img src="imagenes/marcas/brand2.png" alt=""></article>
-            <article><img src="imagenes/marcas/brand3.png" alt=""></article>
-            <article><img src="imagenes/marcas/brand4.png" alt=""></article>
-            <article><img src="imagenes/marcas/brand5.png" alt=""></article>
+            <article><img src="image/marcas/brand.png" alt=""></article>
+            <article><img src="image/marcas/brand2.png" alt=""></article>
+            <article><img src="image/marcas/brand3.png" alt=""></article>
+            <article><img src="image/marcas/brand4.png" alt=""></article>
+            <article><img src="image/marcas/brand5.png" alt=""></article>
         </div>   
     </section>
 
