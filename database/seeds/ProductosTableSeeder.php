@@ -132,7 +132,8 @@ class ProductosTableSeeder extends Seeder
                   
             foreach($productos as $produc){
                 $cat=srand(1,3); 
-                $produc->categoria()->sync($cat);     
+                $produc->categoria()->sync($cat);
+                $cat='';     
         }        
             
     
