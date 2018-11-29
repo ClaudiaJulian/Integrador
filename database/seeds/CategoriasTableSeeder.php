@@ -24,11 +24,6 @@ class CategoriasTableSeeder extends Seeder
             'nombre' => 'Tech',
             ]);    
 
-        $productos=Producto::All();
-        $cat=rand(1,3);       
-        foreach($productos as $produc){
-            $produc->categoria()->sync($cat);     
-    }        
 
 
     }

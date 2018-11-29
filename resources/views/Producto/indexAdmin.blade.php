@@ -20,8 +20,8 @@
                         <ul>
                             <li><a href="../admin/categoria/{{$cat['id']}}" style="width:15vw">{{$cat['nombre']}}</a></li>
                             <div>
-                                <button><a class="" href="categoria/{{ $cat['id'] }}/edit"> C </a></button>
-                                <button><a class="" href="categoria/{{ $cat['id'] }}/delete"> X </a></button>
+                                <button><a class="" href="/{{ $cat['id'] }}/edit"> C </a></button>
+                                <button><a class="" href="../categoria/{{ $cat['id'] }}/delete"> X </a></button>
                             </div>
                         </ul>                                             
                     </article>

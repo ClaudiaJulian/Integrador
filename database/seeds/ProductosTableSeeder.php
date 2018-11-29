@@ -128,8 +128,13 @@ class ProductosTableSeeder extends Seeder
             // 'oferta'=> '50',
             ]);   
 
-        
-
+            $productos=Producto::All();
+                  
+            foreach($productos as $produc){
+                $cat=srand(1,3); 
+                $produc->categoria()->sync($cat);     
+        }        
+            
     
     }
 }

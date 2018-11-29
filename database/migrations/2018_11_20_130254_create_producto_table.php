@@ -22,7 +22,7 @@ class CreateProductoTable extends Migration
             $table->integer('qVentas');
             $table->string('photo')->default('/img_default/img_produc.jpg');
             $table->integer('stock');
-            $table->integer('oferta')->default('null');
+            $table->integer('oferta')->nullable();
             $table->timestamps();
         });
     }
