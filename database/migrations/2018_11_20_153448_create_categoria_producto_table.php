@@ -16,9 +16,9 @@ class CreateCategoriaProductoTable extends Migration
         Schema::create('categoria_producto', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('categoria_id')->unsigned();
-            $table->foreign('categoria_id')->references('id')->on('categorias');
+            $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('producto_id')->unsigned();
-            $table->foreign('producto_id')->references('id')->on('productos');
+            $table->foreign('producto_id')->references('id')->on('productos')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

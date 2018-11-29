@@ -16,7 +16,7 @@ class CreateTiposTable extends Migration
         Schema::create('tipos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre',100);
-            $table->string('photo')->nullable();
+            $table->string('photo')->default('/img_default/img_tipo.jpg');
             $table->timestamps();
         });
     }

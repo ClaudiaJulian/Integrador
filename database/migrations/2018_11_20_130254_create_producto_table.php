@@ -20,9 +20,9 @@ class CreateProductoTable extends Migration
             $table->decimal('precio',7,2);
             $table->integer('tipo_id');
             $table->integer('qVentas');
-            $table->string('photo');
+            $table->string('photo')->default('/img_default/img_produc.jpg');
             $table->integer('stock');
-            $table->integer('oferta');
+            $table->integer('oferta')->default('null');
             $table->timestamps();
         });
     }

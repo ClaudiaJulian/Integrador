@@ -77,8 +77,10 @@ class ProductoController extends Controller
 
        $this->validate($request,$validaciones,$mensajes); 
 
+       
        $path = $request->file('img')->storePublicly('public/img_producto');
        $path = str_replace('public','/storage',$path);
+      
       
        $producto = Producto::create([
            'nombre' => $request->input('nombre'),
