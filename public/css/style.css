@@ -525,6 +525,143 @@ input::placeholder {
 
 /* ---  FIN HOME ---- */
 
+
+/* --SHOP-- */
+
+.BannerShop{
+    background-image: url("../image/banner4.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	color: white;
+    font-size: 2em;
+}
+
+.BannerShop h1{
+    font-size: 1.2em;
+}
+
+.ListTipos{
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ShopTipos {
+    /* width: 100%;
+    background-color: #aaaaaa; */
+    /* text-align: center; */
+}
+
+.ShopTipos ul {
+    padding: 0;
+    margin: 0;
+    text-align: center; 
+    
+}
+
+.ShopTipos ul li {
+    /* width: 100%;*/
+    
+    border-bottom: 1px solid cadetblue;
+}
+
+.ShopTipos a {
+    padding: 10px 0;
+    
+    display: block;
+    background-color: whitesmoke;
+    color: black;
+}
+
+/* SECCION */
+.SeleccionProducto{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    
+    justify-content: center;
+    text-align: center;
+    margin: 15px 0;
+    
+}
+
+.SeleccionText{
+    width: 33%;
+    background-color: white;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.SeleccionText a{
+    padding: 20px 0;
+    display: block;
+    color: black;
+}
+
+.SeleccionText a:hover{
+    background-color: whitesmoke;
+}
+
+
+/* TIPOS PRODUCTOS  */
+.TiposAccesorios{
+    margin: 0 auto;
+    width: 400px;
+    box-shadow:  0px 10px 10px 0px rgba(153, 153, 153, 0.1);
+    padding-bottom: 10px;
+}
+
+.TiposAccesorios h3{
+    background-color: #e8f0f2;
+    padding: 10px 15px;
+}
+
+.TiposText li{
+    margin: 10px 0;
+}
+
+.TiposText a{
+    color: black;
+    padding: 5px 15px;
+    
+}
+
+.TiposText a:hover{
+    color: cadetblue;
+}
+
+/* PRODUCTOS */
+.ProductosN{
+    width: 100%;
+    margin: 20px auto; 
+    
+}
+.ProducS{
+    width: 100%;
+    padding: 0 15px
+}
+.ProdDescrip a{
+    background-color: #e8f0f2;
+    color: black;
+    padding: 10px 15px;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+.ProdDescrip a:hover{
+    background-color: whitesmoke;
+}
+
+
+
+
 /* ---  FAQ  ---   */
 
 .bannerfaq img {
@@ -1429,46 +1566,54 @@ footer {
      /* NUEVO SHOP */
 
 	.BannerShop{
-		height: 300px;
-	background-image: url("../image/banner4.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
+	height: 300px;
+    }
+    
+    .BannerShop h1{
+        font-size: 1.8em;
+    }
 
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	color: white;
-	font-size: 2em;
-	}
+    .ListTipos{
+        align-items: flex-start;
+    }
+
+    .ShopTipos ul li{
+        /* padding-left: 10px */
+    }
+
 	.ShopCont {
-		display: flex;
-		flex-wrap: wrap;
-		width: 100%;
-		margin: 50px 0;
+		/* display: flex;
+		flex-wrap: wrap; */
+		/* width: 100%; */
+        margin: 50px auto;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        
 	}
 
 	.ShopTipos {
 		width: 40%;
-		background-color: azure;
-	}
-
-	.ShopTipos ul {
-		padding: 0;
-
+		/* background-color: azure; */
 	}
 
 	.ShopTipos ul li {
 		text-align: left;
 	}
 
-	.ShopTipos ul li a {
-		display: inline-block;
-		padding: 10px 50px;
-		background-color: whitesmoke;
-		color: black;
-	}
+    .ShopTipos a{
+        padding-left: 10px;
+    }
+
+    .SeleccionProducto{
+        width: 400px;
+        
+    }
+
+    .TiposAccesorios{
+        margin: 0 0;
+    }
+
 
 	.ProductosN {
 		display: flex;
@@ -1476,7 +1621,15 @@ footer {
 		width: 60%;
 	}
 
+    .TablaProductos{
+        width: 400px;
+    }
 
+    .ProductosN{
+       max-width: 900px;
+    }
 
-
+    .ProducS{
+        margin-bottom: 10px;
+    }
 }
