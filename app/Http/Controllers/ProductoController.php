@@ -54,8 +54,10 @@ class ProductoController extends Controller
     }
 
     public function create(){
+        // $productos=Producto::All();
+        $tipo=Tipo::All();
         $categorias=Categoria::All();
-        return view('producto.create')->with('categorias',$categorias);
+        return view('producto.create')->with('categorias',$categorias)->with('tipo',$tipo);
     }
 
     public function guardar(Request $request)
@@ -100,10 +102,11 @@ class ProductoController extends Controller
     public function edit($id)
     {
         $producto=Producto::find($id);
-        $categorias = Categoria::all();  
+        $categorias = Categoria::all();
+        $tipo=Tipo::All();  
 
         if($producto !== null){
-            return view('Producto.editar')->with('producto',$producto)->with('categorias',$categorias);
+            return view('Producto.editar')->with('producto',$producto)->with('categorias',$categorias)->with('tipo',$tipo);
         } else { 
          return "No se ha encontrado el producto solicitado"; }
     }

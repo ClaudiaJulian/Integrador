@@ -185,6 +185,99 @@ input::placeholder {
 
 /* ---  FIN BANNER ---- */
 
+/* --- BACK END --- */
+
+     .BannerShop{
+		height: 300px;
+	background-image: url("../image/banner4.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 2em;
+	}
+	.ShopCont {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		margin: 50px 0;
+	}
+
+	.ShopTipos {
+		width: 40%;
+	}
+
+	.ShopTipos ul {
+		padding: 0;
+
+	}
+
+	.ShopTipos ul li {
+		text-align: left;
+	}
+
+	.ShopTipos ul li a {
+		display: inline-block;
+		padding: 10px 5px;
+		background-color: whitesmoke;
+        color: black;
+        margin:0px 16px;
+	}
+
+    .ShopProductos ul li a {
+		display: inline-block;
+        padding: 10px 5px;
+        margin:16px;
+		background-color: rgb(191, 231, 191);
+		color: black;
+    }
+
+    .ShopItems ul {
+        padding:0;
+    }
+    .ShopItems div p {
+    text-align: left;
+    }
+
+    .ShopItems ul li a {
+		display: inline-block;
+        padding: 10px 5px;
+        margin:0px 16px;
+		background-color: rgb(191, 223, 231);
+		color: black;
+    }
+
+    .ShopProductos ul {
+        padding:0;
+
+    }
+
+    .BotonCX {
+        margin-left:16px;
+    }
+    
+	.ProductosN {
+		display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+		width: 70vw;
+	}
+
+    .AdmColumna {
+        width: 30vw;
+        padding: 0px 20px;
+    }
+
+    .FormCreate {
+        width: 50vw;
+        margin-bottom: 0px;
+    }
+/* --- FIN DEL BACK END -- */
 /* ---  HOME ---- */
 
 .IntroText {
@@ -309,8 +402,8 @@ input::placeholder {
 }
 
 .ProducS {
-    width: 45%;
-    margin-bottom: 30px;
+    width: 35%;
+    margin: 4px;
 }
 
 .ProducS img {
@@ -571,10 +664,6 @@ input::placeholder {
 }
 
 /* ---   FIN DEL FAQ   ---   */
-
-/* --- LOGIN - SIGNUP --- */
-
-/* --- FIN LOGIN - SIGNUP --- */
 
 /* ---  FOOTER ---- */
 footer {
@@ -1080,92 +1169,6 @@ footer {
     /* FIN NUEVO */
 
     /* ---  FIN HOME ---- */
-
-    /* ---    FAQ   ---  */
-    .faq {
-        background-color: #f5f7f9;
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .faq ol h2 {
-        font-size: 1.5em;
-    }
-
-    .faq ol li {
-        width: 80%;
-        background-color: unset;
-        position: unset;
-        font-size: 1.2em;
-    }
-
-    .faq ol li p {
-        font-size: 0.8em;
-    }
-
-    /* ---     FIN DEL FAQ    ---   */
-     /* NUEVO SHOP */
-
-	.BannerShop{
-		height: 300px;
-	background-image: url("../image/banner4.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	color: white;
-	font-size: 2em;
-	}
-	.ShopCont {
-		display: flex;
-		flex-wrap: wrap;
-		width: 100%;
-		margin: 50px 0;
-	}
-
-	.ShopTipos {
-		width: 40%;
-	}
-
-	.ShopTipos ul {
-		padding: 0;
-
-	}
-
-	.ShopTipos ul li {
-		text-align: left;
-	}
-
-	.ShopTipos ul li a {
-		display: inline-block;
-		padding: 10px 50px;
-		background-color: whitesmoke;
-		color: black;
-	}
-
-    .ShopProductos ul li a {
-		display: inline-block;
-		padding: 10px 50px;
-		background-color: whitesmoke;
-		color: black;
-    }
-    
-	.ProductosN {
-		display: flex;
-		flex-wrap: wrap;
-		width: 70vw;
-	}
-
-    .AdmColumna {
-        width: 30vw;
-        padding: 20px;
-    }
 
 
 }

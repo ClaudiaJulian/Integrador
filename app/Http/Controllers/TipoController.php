@@ -39,7 +39,9 @@ class TipoController extends Controller
     }
 
     public function create(){
-        return view('tipo.create');
+        $categorias=Categoria::All();
+        $tipo=Tipo::All();
+        return view('tipo.create')->with('categorias',$categorias)->with('tipo',$tipo);
     }
 
     public function guardar(Request $request)
@@ -62,14 +64,16 @@ class TipoController extends Controller
            'photo' => $path  
        ]);
        
-       return redirect('/tipo/create');
+       return redirect('/admin');
     }
 
     public function edit($id){
-        $tipo = Tipo::find($id);  
+        $tipo = Tipo::find($id);
+        $tipos=Tipo::All();
+        $categorias=Categoria::All();  
 
         if($tipo !== null){
-            return view('Tipo.editar')->with('tipo',$tipo);
+            return view('Tipo.editar')->with('tipo',$tipo)->with('tipos',$tipos)->with('categorias',$categorias);
         } else { 
             return "No se ha encontrado el tipo solicitado";
         }

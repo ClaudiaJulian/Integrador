@@ -41,7 +41,9 @@ class CategoriaController extends Controller
     }
 
     public function create(){
-        return view('categoria.create');
+        $categorias=Categoria::All();
+        $tipo=Tipo::All();
+        return view('categoria.create')->with('categorias',$categorias)->with('tipo',$tipo);
     }
 
     public function guardar(Request $request)
@@ -68,10 +70,12 @@ class CategoriaController extends Controller
     }
 
     public function edit($id){
-        $categoria = Categoria::find($id);  
+        $categoria = Categoria::find($id); 
+        $categorias = Categoria::all();
+        $tipo=Tipo::all(); 
 
         if($categoria !== null){
-            return view('Categoria.editar')->with('categoria',$categoria);
+            return view('Categoria.editar')->with('categoria',$categoria)->with('categorias',$categorias)->with('tipo',$tipo);
         } else { 
             return "No se ha encontrado la categoria solicitada";
         }
