@@ -7,11 +7,11 @@
         </section>
 
         <div class="ShopCont">
-            <section class="">
-                    <article class="CategoriasN">
+            <section class="AdmColumna">
+                    <article class="ShopProductos">
                         <ul>
-                            <li><a class="" href="producto/create"> Agregar Producto </a></li>            
-                            <li><a href="" style="width:15vw">Todos</a></li>
+                            <li><a class="" href="producto/create" style="width:20vw"> + Producto </a></li>            
+                            <li><a href="" style="width:20vw">Todos</a></li>
                         </ul>                           
                     </article> 
 
@@ -20,7 +20,7 @@
                         <ul>
                             <li><a href="../admin/categoria/{{$cat['id']}}" style="width:15vw">{{$cat['nombre']}}</a></li>
                             <div>
-                                <button><a class="" href="/{{ $cat['id'] }}/edit"> C </a></button>
+                                <button><a class="" href="../categoria/{{ $cat['id'] }}/edit"> C </a></button>
                                 <button><a class="" href="../categoria/{{ $cat['id'] }}/delete"> X </a></button>
                             </div>
                         </ul>                                             

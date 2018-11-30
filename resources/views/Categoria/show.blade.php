@@ -31,11 +31,11 @@
             <section class="ProductosN">
             @foreach($categoria->producto as $produc)
             <article class="ProducS">  
-                <a href="producto/{{$produc['id']}}"><img src="{{ asset($produc['photo']) }}"></a> 
+                <a href="../producto/{{$produc['id']}}"><img src="{{ asset($produc['photo']) }}"></a> 
                 <div class="ProdDescrip"> 
                     <h3 style=""> {{ $produc['nombre'] }} </h3>
                     <h3 style=""> {{ $produc['marca'] }} </h3>
-                    <p><span> ${{ $produc['precio'] }} </span></p>
+                    <p><span> ${{ $produc['precio'] * (1 - $produc['oferta']/100) }} </span></p>
                     <button type="submit">Comprar</button>
                 </div>
             </article>

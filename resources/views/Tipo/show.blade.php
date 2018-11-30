@@ -34,7 +34,7 @@
             <div class="ProdDescrip">
                 <h3> {{ $produc['nombre'] ." - ". $produc->tipo->nombre }} </h3>
                 <h3> {{ $produc['marca'] }} </li>
-                <p><span> ${{ $produc['precio'] }} </p></span>
+                <p><span> ${{ $produc['precio']* (1 - $produc['oferta']/100) }} </p></span>
                 <button type="submit">Comprar</button>        
             </div>
         </article>

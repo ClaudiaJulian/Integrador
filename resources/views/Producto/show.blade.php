@@ -33,7 +33,7 @@
                     <img src="{{ asset($producto['photo']) }}"> 
                     <h3> {{ $producto['nombre'] ." - ". $producto->tipo->nombre }} </h3>
                     <h3> {{ $producto['marca'] }} </h3>
-                    <h3> ${{ $producto['precio'] }} </h3>
+                    <h3> ${{ $producto['precio']* (1 - $producto['oferta']/100) }} </h3>
                  <button type="submit"><a href="carro/{{ $producto->slug}}">Comprar</a></button>        
                 </article>
             </section> 

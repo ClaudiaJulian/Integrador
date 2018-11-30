@@ -3,7 +3,7 @@
 @section('content')
     <main class="Shop">
         <section class="BannerShop">
-            <h1>Productos</h1>
+            <h1>Administración</h1>
         </section>
        
         <div class="ShopCont">
@@ -19,8 +19,8 @@
                         <ul>
                             <li><a href="../categoria/{{$cat['id']}}" style="width:15vw">{{$cat['nombre']}}</a></li>
                             <div>
-                                <button><a class="" href="categoria/{{ $cat['id'] }}/edit"> C </a></button>
-                                <button><a class="" href="categoria/{{ $cat['id'] }}/delete"> X </a></button>
+                                <button><a class="" href="../../categoria/{{ $cat['id'] }}/edit"> C </a></button>
+                                <button><a class="" href="../../categoria/{{ $cat['id'] }}/delete"> X </a></button>
                             </div>
                         </ul>                                             
                     </article>
@@ -42,9 +42,9 @@
             <article class="ProducS">  
                 <a href="../admin/producto/{{$produc['id']}}"><img src="{{ asset($produc['photo']) }}"></a> 
                 <div class="ProdDescrip"> 
-                    <h3 style=""> {{ $produc['nombre'] }} </h3>
+                    <h3 style=""> {{ $produc['nombre'] . " " .$categoria['nombre'] }} </h3>
                     <h3 style=""> {{ $produc['marca'] }} </h3>
-                    <p><span> ${{ $produc['precio'] }} </span></p>
+                    <p><span> ${{ $produc['precio'] * (1 - $produc['oferta']/100)}} </span></p>
                     <div>
                     <h4><a class="" href="producto/{{ $produc['id'] }}/edit"> Editar </a></h4>
                     <h4><a class="" href="producto/{{ $produc['id'] }}/delete"> Eliminar </a></h4>

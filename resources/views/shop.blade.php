@@ -35,7 +35,7 @@
                         <a href="producto/{{$ofer['id']}}"><img src="{{ asset($ofer['photo']) }}"></a> 
                         <div class="ProdDescrip"> 
                             <h3> {{ $ofer['marca'] }} </h3>
-                            <p><span class="oldPrice">${{ $ofer['precio'] }}</span>  ${{ $ofer['precio'] * $ofer['oferta']/100 }}</p>    
+                            <p><span class="oldPrice">${{ $ofer['precio'] }}</span>  ${{ $ofer['precio'] * (1 - $ofer['oferta']/100) }}</p>    
                             <button><a href="carro/add/{{$ofer['id']}}">Comprar </a></button>   
                         </div>
                     </article>

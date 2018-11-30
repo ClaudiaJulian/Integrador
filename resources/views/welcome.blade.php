@@ -81,7 +81,7 @@
                 <div class="ProdDescrip">
             
                     <h3> {{ $ofer['marca'] }} </h3>
-                    <p><span class="oldPrice">${{ $ofer['precio'] }}</span>  ${{ $ofer['precio'] * $ofer['oferta']/100 }}</p>    
+                    <p><span class="oldPrice">${{ $ofer['precio'] }}</span>  ${{ $ofer['precio'] * (1 - $ofer['oferta']/100) }}</p>    
                 </div>
             </article>
         @endforeach
@@ -112,7 +112,7 @@
                 <article class="ProducN">
                     <img src="{{ asset($new['photo']) }}" alt=""> 
                     <h3> {{ $new['marca'] }} </h3>
-                    <p>${{ $new['precio'] }}</p>    
+                    <p>${{ $new['precio']* (1 - $new['oferta']/100) }}</p>    
                 </article>
                 @endforeach
             </div>
@@ -139,7 +139,7 @@
                 <article class="ProducN">
                     <img src="{{ asset($sell['photo']) }}" alt=""> 
                     <h3> {{ $sell['marca'] }} </h3>
-                    <p>${{ $sell['precio'] }}</p>    
+                    <p>${{ $sell['precio'] * (1 - $sell['oferta']/100) }}</p>    
                 </article>
                 @endforeach                
             </div>

@@ -3,7 +3,7 @@
 @section('content')
     <main class="Shop">
     <section class="BannerShop">
-        <h1>Productos</h1>
+        <h1>Administración</h1>
     </section>  
         <div class="ShopCont">
             <section class="">
@@ -29,8 +29,8 @@
                     <article class="CategoriasN">
                             <li style="list-style: none"><a href="../tipo/{{$tip['id']}}" style="width:15vw;text-decoration:none">{{$tip['nombre']}}</a></li>    
                             <div>
-                            <button><a class="" href="tipo/{{ $tip['id'] }}/edit"> C </a></button>
-                            <button><a class="" href="tipo/{{ $tip['id'] }}/delete"> X </a></button>
+                            <button><a class="" href="../../../tipo/{{ $tip['id'] }}/edit"> C </a></button>
+                            <button><a class="" href="../../../tipo/{{ $tip['id'] }}/delete"> X </a></button>
                             </div>
                     </article>
                 @endforeach

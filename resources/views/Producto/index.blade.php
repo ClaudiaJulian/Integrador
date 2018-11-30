@@ -34,7 +34,7 @@
                 <a class="" href="producto/{{$produc['id']}}">
                      <img src="{{ asset($produc->photo) }}"></a> 
                      <h3> {{$produc['nombre']}} </h3>
-                     <h3> ${{$produc['precio']}} </h3>
+                     <h3> ${{$produc['precio']* (1 - $produc['oferta']/100) }} </h3>
                    
                     <button><a href="carro/add/{{$produc['id']}}">Comprar </a></button>
             

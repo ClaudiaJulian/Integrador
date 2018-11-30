@@ -1131,7 +1131,6 @@ footer {
 
 	.ShopTipos {
 		width: 40%;
-		background-color: azure;
 	}
 
 	.ShopTipos ul {
@@ -1150,13 +1149,23 @@ footer {
 		color: black;
 	}
 
+    .ShopProductos ul li a {
+		display: inline-block;
+		padding: 10px 50px;
+		background-color: whitesmoke;
+		color: black;
+    }
+    
 	.ProductosN {
 		display: flex;
 		flex-wrap: wrap;
-		width: 60%;
+		width: 70vw;
 	}
 
-
+    .AdmColumna {
+        width: 30vw;
+        padding: 20px;
+    }
 
 
 }
