@@ -50,7 +50,7 @@
             <section class="ProductosN">
             @foreach($categoria->producto as $produc)
             <article class="ProducS">  
-                <a href="../admin/producto/{{$produc['id']}}"><img src="{{ asset($produc['photo']) }}"></a> 
+                <a href="../../producto/{{$produc['id']}}/edit"><img src="{{ asset($produc['photo']) }}"></a> 
                 <div class="ProdDescrip"> 
                     <h3 style=""> {{ $produc['nombre'] . " " .$categoria['nombre'] }} </h3>
                     <h3 style=""> {{ $produc['marca'] }} </h3>

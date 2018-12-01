@@ -28,17 +28,17 @@
             <section class="SeleccionProducto"> 
                 <article class="SeleccionText">
                     <i class="far fa-clock fa-2x"></i>
-                    <a href="">Last Minutes</a>
+                    <a href="../producto/filtro/ofertas">Last Minutes</a>
                 </article>
                 
                 <article class="SeleccionText">
                 <i class="far fa-grin-stars fa-2x"></i>
-                        <a href="">New Accesories</a>
+                        <a href="../producto/filtro/ofertas">New Accesories</a>
                 </article>
                 
                 <article class="SeleccionText">
                 <i class="far fa-star fa-2x"></i>
-                    <span><a href="">Best Sellers</a></span>
+                    <span><a href="../producto/filtro/ofertas">Best Sellers</a></span>
                 </article>                
             </section>
 

@@ -58,7 +58,11 @@
                         <a href="../../producto/{{$new['id']}}"><img src="{{ asset($new['photo']) }}"></a> 
                         <div class="ProdDescrip"> 
                             <h3> {{ $new['marca'] }} </h3>
-                            <p><span class="oldPrice">${{ $new['precio'] }}</span>  ${{ $new['precio'] * (1 - $new['oferta']/100) }}</p>    
+                            @if($new['oferta']!== null)
+                                <p><span class="oldPrice">${{ $new['precio'] }}</span>  ${{ $new['precio'] * (1 - $new['oferta']/100) }}</p>    
+                            @else
+                                <p><span>${{ $new['precio'] }}</span></p>
+                            @endif
                             <a href="../../carro/add/{{$new['id']}}">Comprar </a> 
                         </div>
                     </article>

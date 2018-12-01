@@ -126,16 +126,51 @@ class ProductosTableSeeder extends Seeder
             'qVentas'=> '80',
             'stock'=> '15',
             // 'oferta'=> '50',
-            ]);   
+            ]);
+            
+            Producto::create([
+                'nombre' => 'nombre13', 
+                'marca' => 'marca1',
+                'precio'=> '300',
+                'tipo_id'=> '3',
+                'qVentas'=> '30',
+                'stock'=> '12',
+                // 'oferta'=> '50',
+                ]);
+
+            Producto::create([
+                'nombre' => 'nombre14', 
+                'marca' => 'marca2',
+                'precio'=> '1200',
+                'tipo_id'=> '4',
+                'qVentas'=> '25',
+                'stock'=> '19',
+                'oferta'=> '40',
+                ]);
+
+            Producto::create([
+                'nombre' => 'nombre15', 
+                'marca' => 'marca3',
+                'precio'=> '800',
+                'tipo_id'=> '5',
+                'qVentas'=> '12',
+                'stock'=> '10',
+                'oferta'=> '30',
+                ]);
+
+
 
             $productos=Producto::All();
-                  
+                   
             foreach($productos as $produc){
-                $cat=srand(1,3); 
+                $cat=rand(1,3);
                 $produc->categoria()->sync($cat);
-                $cat='';     
+                $cat='';
+
         }        
-            
+    
+        
+
     
     }
 }

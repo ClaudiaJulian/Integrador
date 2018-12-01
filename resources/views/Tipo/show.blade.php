@@ -28,17 +28,17 @@
             <section class="SeleccionProducto"> 
                 <article class="SeleccionText">
                     <i class="far fa-clock fa-2x"></i>
-                    <a href="">Last Minutes</a>
+                    <a href="../producto/filtro/ofertas">Last Minutes</a>
                 </article>
                 
                 <article class="SeleccionText">
                 <i class="far fa-grin-stars fa-2x"></i>
-                        <a href="">New Accesories</a>
+                        <a href="../producto/filtro/news">New Accesories</a>
                 </article>
                 
                 <article class="SeleccionText">
                 <i class="far fa-star fa-2x"></i>
-                    <span><a href="">Best Sellers</a></span>
+                    <span><a href="../producto/filtro/sellers">Best Sellers</a></span>
                 </article>                
             </section>
 
@@ -60,7 +60,7 @@
                 <h3> {{ $produc['nombre'] ." - ". $produc->tipo->nombre }} </h3>
                 <!-- <h3> {{ $produc['marca'] }} </li> -->
                 <p>${{ $produc['precio']* (1 - $produc['oferta']/100) }}</p>
-                <a href="carro/add/{{$produc['id']}}">Comprar </a>       
+                <a href="../carro/add/{{$produc['id']}}">Comprar </a>       
             </div>
         </article>
     @endforeach
