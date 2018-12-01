@@ -7,36 +7,73 @@
         </section>
        
         <div class="ShopCont">
-            <section class="">
+            <div class="TablaProductos">
+
+            <section class="ListTipos">
                 <article class="ShopTipos">
                     <ul>
-                       <li><a href="/producto" style="width:15vw">Todos</a></li>
+                       <li><a href="/producto">Todos</a></li>
                     </ul> 
                 </article> 
+
                 @foreach($categorias as $cat)
                     <article class="ShopTipos">    
                         <ul>
-                            <li><a href="../categoria/{{$cat['id']}}" style="width:15vw">{{$cat['nombre']}}</a></li>
+                            <li><a href="../categoria/{{$cat['id']}}">{{$cat['nombre']}}</a></li>
                         </ul>                                             
                     </article>
-                @endforeach  
+                @endforeach 
+            </section>
+
+            <section class="SeleccionProducto"> 
+                    <article class="SeleccionText">
+                        <i class="far fa-clock fa-2x"></i>
+                        <a href="/producto/filtro/ofertas">Last Minutes</a>
+                    </article>
+                    
+                    <article class="SeleccionText">
+                    <i class="far fa-grin-stars fa-2x"></i>
+                            <a href="/producto/filtro/news">New Accesories</a>
+                    </article>
+                    
+                    <article class="SeleccionText">
+                    <i class="far fa-star fa-2x"></i>
+                        <span><a href="/producto/filtro/sellers">Best Sellers</a></span>
+                    </article>                
+            </section>
+
+            <section class="TiposAccesorios">
                 <h3>Tipos</h3>
                 @foreach($tipo as $tip)
-                    <article class="CategoriasN">
-                          <li style="list-style: none"><a href="../tipo/{{$tip['id']}}" style="width:15vw;text-decoration:none">{{$tip['nombre']}}</a></li>    
+                    <article class="TiposText">
+                          <li style="list-style: none"><a href="../tipo/{{$tip['id']}}">{{$tip['nombre']}}</a></li>    
                     </article>
                 @endforeach
             </section>
+        </div>
         
-            <section class="ProductosN">  
-                <article class="ProducS">            
-                    <img src="{{ asset($producto['photo']) }}"> 
-                    <h3> {{ $producto['nombre'] ." - ". $producto->tipo->nombre }} </h3>
-                    <h3> {{ $producto['marca'] }} </h3>
-                    <h3> ${{ $producto['precio']* (1 - $producto['oferta']/100) }} </h3>
-                 <button type="submit"><a href="carro/{{ $producto->slug}}">Comprar</a></button>        
+            <section class="ProductosN ProductosSh">  
+                <article class="ProducS ProducS2 ProductosOne">            
+                    <img src="{{ asset($producto['photo']) }}">
+                    <div class="ProdDescrip">
+                        <h3> {{ $producto['nombre'] ." - ". $producto->tipo->nombre }} </h3>
+                        <h3> {{ $producto['marca'] }} </h3>
+                        <h3> ${{ $producto['precio']* (1 - $producto['oferta']/100) }} </h3>
+                        <a href="../carro/add/{{$producto['id']}}">Comprar</a>
+                    </div>    
                 </article>
             </section> 
         </div>   
 </main>
+<footer>
+    <h3>copyright</h3>
+
+    <!-- Redes -->
+    <ul>
+        <li>Facebook</li>
+        <li>Twitter</li>
+        <li>Instagram</li>
+        <li>Gmail</li>
+    </ul>
+</footer>
 @endsection

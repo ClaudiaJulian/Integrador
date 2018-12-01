@@ -32,6 +32,9 @@ Route::group(['middleware' => 'checkRole:admin'], function () {
 });
 Route::get('/producto','ProductoController@index');
 Route::get('/producto/{id}','ProductoController@show')->name('producto');
+Route::get('/producto/filtro/sellers','ProductoController@sellers');
+Route::get('/producto/filtro/news','ProductoController@news');
+Route::get('/producto/filtro/ofertas','ProductoController@ofertas');
 
 // nobasic - TIPO ES SU GENERICO INMEDIATO [MOCHILA-GORRO-ETC]
 Route::group(['middleware' => 'checkRole:admin'], function () {
@@ -66,7 +69,7 @@ Route::get('/carro/total','CarroController@total');
 Route::get('/carro/pagar','CarroController@pagar');
 
 
-Route::get('/carro/add/{id}','CarroController@add');
+Route::get('/carro/add/{id}','CarroController@show');
 
 
 

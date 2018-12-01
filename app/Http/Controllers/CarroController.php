@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Producto;
 use App\Carro;
+use App\Tipo;
 
 class CarroController extends Controller
 {
@@ -33,25 +34,23 @@ class CarroController extends Controller
         $carro = \Session::get('carro');
         $producto = Producto::find($id);
         $carro[] = $producto;
-        
         \Session::put('carro',$carro);
-        //    dd(\Session::get('carro'));
-        // return view('carro')->with('carro',$carro);
-        return view('carro');
+        return view('carro')->with('carro',$carro);
     }
 
     public function edit(){
-        return view('user.carro');
+        return view('carro');
     }
 
     public function trash(){
-        return view('user.carro');
+        return view('carro');
     }
     public function total(){
-        return view('user.carro');
+    
+        return view('carro');
     }
     public function pagar(){
-        return view('user.carro');
+        return view('carro');
     }
 
 }

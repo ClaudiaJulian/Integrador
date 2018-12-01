@@ -44,6 +44,30 @@ class ProductoController extends Controller
         return "No se ha encontrado el producto solicitado";
     }
 
+    public function ofertas(){
+        $ofertas=Producto::where('oferta','>',0)->take(6)->get();
+        $tipo=Tipo::All();
+        $categoria=Categoria::All();
+       
+       return view('ofertas')->with('ofertas',$ofertas)->with('tipo',$tipo)->with('categoria',$categoria);
+   }
+
+   public function sellers(){
+       $sellers=Producto::where('id','>',0)->orderBy('qVentas','DESC')->take(4)->get();
+       $tipo=Tipo::All();
+       $categoria=Categoria::All();
+       
+       return view('sellers')->with('sellers',$sellers)->with('tipo',$tipo)->with('categoria',$categoria);
+   }
+
+   public function news(){
+       $news=Producto::where('id','>',0)->orderBy('created_at','DESC')->take(4)->get();
+       $tipo=Tipo::All();
+       $categoria=Categoria::All();
+       
+       return view('news')->with('news',$news)->with('tipo',$tipo)->with('categoria',$categoria);
+   }
+
 // A LAS VISTAS DE ADMIN
 
     public function indexAdmin(){

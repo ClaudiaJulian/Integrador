@@ -1,63 +1,83 @@
-@extends('Template.basic')
+@extends('template.basic')
 
 @section('content')
+    <main class="Shop">
+        <section class="BannerShop">
+            <h1>Productos</h1>
+        </section>
+       
+        <div class="ShopCont">
+            <div class="TablaProductos">
+            
+            <section class="ListTipos">
+                <article class="ShopTipos">
+                        <ul>
+                            <li><a href="/producto">Todos</a></li>
+                        </ul> 
+                </article>    
 
-<section class="content" >
-    <h2 class="titulo">Productos</h2>
-  
-    <div class="index">          
-          <p ><a class="links" href="/categoria">Por Categoria</a></p>    
-          <p ><a class="links" href="/tipo">Por Tipo</a></p>
-    </div>
-    <h2 class="titulo">News</h2>
-    <div style="margin-top:20px;">
-        <ul class="">             
-        
-        @foreach($news as $new)
-        <li class="">  
-            <a class="" href="">
-                <img src="{{ asset($new->photo) }}"> 
-                <h3> {{$new['nombre']}} </h3>
-                <h3> ${{$new['precio']}} </h3>
-                <button type="submit"> Comprar </button>
-            </a>
-        </li>     
-        @endforeach
-        </ul>      
-    </div> 
-    <h2 class="titulo">Sellers</h2>
-    <div style="margin-top:20px;">
-        <ul class="">             
-        
-        @foreach($sellers as $sell)
-        <li class="">  
-            <a class="" href="">
-                <img src="{{ asset($sell->photo) }}"> 
-                <h3> {{$sell['nombre']}} </h3>
-                <h3> ${{$sell['precio']}} </h3>
-                <button type="submit"> Comprar </button>
-            </a>
-        </li>     
-        @endforeach
-        </ul>      
-    </div>
-    <h2 class="titulo">Ofertas</h2>
-    <div style="margin-top:20px;">
-        <ul class="">             
-        
-        @foreach($ofertas as $ofer)
-        <li class="">  
-            <a class="" href="">
-                <img src="{{ asset($ofer->photo) }}"> 
-                <h3> {{$ofer['nombre']}} </h3>
-                <h3> ${{$ofer['precio']}} </h3>
-                <h3> Desc. {{$ofer['oferta']}}% </h3>
-                <button type="submit"> Comprar </button>
-            </a>
-        </li>     
-        @endforeach
-        </ul>      
-    </div> 
-</section>
+                @foreach($categoria as $categ)
+                    <article class="ShopTipos">    
+                        <ul>
+                            <li><a href="/categoria/{{$categ['id']}}">{{$categ['nombre']}}</a></li>
+                        </ul>                                             
+                    </article>
+                @endforeach  
+            </section>  
+                        
+            <section class="SeleccionProducto"> 
+                <article class="SeleccionText">
+                    <i class="far fa-clock fa-2x"></i>
+                    <a href="/producto/filtro/ofertas">Last Minutes</a>
+                </article>
+                
+                <article class="SeleccionText">
+                <i class="far fa-grin-stars fa-2x"></i>
+                        <a href="/producto/filtro/news">New Accesories</a>
+                </article>
+                
+                <article class="SeleccionText">
+                <i class="far fa-star fa-2x"></i>
+                    <span><a href="/producto/filtro/sellers">Best Sellers</a></span>
+                </article>                
+            </section>
 
+            <section class="TiposAccesorios">
+                <h3>Tipos</h3>
+                    @foreach($tipo as $tip)
+                        <article class="TiposText">
+                            <li style="list-style: none"><a href="/tipo/{{$tip['id']}}" style="width:15vw;text-decoration:none">{{$tip['nombre']}}</a></li>                             
+                        </article>
+                    @endforeach
+            </section>                     
+            </div>
+
+            <section class="ProductosN ProductosSh">
+                @foreach($news as $new)
+                    <article class="ProducS ProducS2">
+                        <a href="../../producto/{{$new['id']}}"><img src="{{ asset($new['photo']) }}"></a> 
+                        <div class="ProdDescrip"> 
+                            <h3> {{ $new['marca'] }} </h3>
+                            <p><span class="oldPrice">${{ $new['precio'] }}</span>  ${{ $new['precio'] * (1 - $new['oferta']/100) }}</p>    
+                            <a href="../../carro/add/{{$new['id']}}">Comprar </a> 
+                        </div>
+                    </article>
+                @endforeach                            
+            </section>
+        </div>
+
+    </main>
+    
+    <footer>
+        <h3>copyright</h3>
+
+        <!-- Redes -->
+        <ul>
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Instagram</li>
+            <li>Gmail</li>
+        </ul>
+    </footer>
+</div>
 @endsection

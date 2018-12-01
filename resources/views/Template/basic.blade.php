@@ -39,7 +39,7 @@
                     <a href="{{ route('login') }}">Login</a>
                     <a href="{{ route('register') }}">Register</a>
                     @endif
-                    <li><i class="fas fa-cart-arrow-down"></i></li>
+                    <li><a href="/carro"><i class="fas fa-cart-arrow-down"></a></i></li>
                 </ul>
             </div>
 
