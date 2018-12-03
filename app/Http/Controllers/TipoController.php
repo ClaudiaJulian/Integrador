@@ -15,6 +15,14 @@ class TipoController extends Controller
         return view('Tipo.index')->with('tipos',$tipos);
     }
 
+    public function buscar(){
+    
+        $tipos=Tipo::All();
+        $tiposJson = json_encode($tipos);
+       
+        return $tiposJson;
+        }
+        
     public function show($id){
         $tipo=Tipo::find($id);
         $tipos=Tipo::All();
@@ -25,6 +33,7 @@ class TipoController extends Controller
         }
         return "No se ha encontrado el tipo de producto solicitado";
     }
+
 
 // A LAS VISTAS DEL ADMIN
     public function showAdmin($id){

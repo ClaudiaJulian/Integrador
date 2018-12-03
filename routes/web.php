@@ -47,6 +47,7 @@ Route::group(['middleware' => 'checkRole:admin'], function () {
     Route::get('/tipo/{id}/delete','TipoController@delete');
 });
 Route::get('/tipo/{id}','TipoController@show')->name('tipo');
+Route::get('/buscar/tipo','TipoController@buscar');
 
 // nobasic - CATEGORIA ES USO PROPUESTO [SPORTY - CITY - TECH]
 Route::group(['middleware' => 'checkRole:admin'], function () {

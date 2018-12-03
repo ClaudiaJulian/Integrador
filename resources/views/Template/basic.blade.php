@@ -51,20 +51,18 @@
             </ul>
 
             <form class="buscador-completo" action="" method="post">
-                <input type="text" placeholder=" producto" name="producto">
+                <input class="dato" type="text" placeholder=" producto" name="producto">
                 <button type="button">
-                    <i class="fas fa-search"></i>
+                    <a href="" class="buscar"><i class="fas fa-search"></i></a>
                 </button>
             </form>
         </nav>
     </header>
 </div>
- 
-
-    
+     
 <!-- <main class="container"> -->
     @yield('content')
 <!-- </main> -->
     
-
+<script src="/js/main.js"></script>
 </html>
