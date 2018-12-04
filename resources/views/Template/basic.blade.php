@@ -8,7 +8,9 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:300,400,500,700" rel="stylesheet">    
+        <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:300,400,500,700" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"> 
         <link rel="stylesheet" href="{{asset('css/style.css')}}">
     </head>
 
@@ -63,6 +65,15 @@
 <!-- <main class="container"> -->
     @yield('content')
 <!-- </main> -->
-    
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>    
 <script src="/js/main.js"></script>
+<script>
+    var elem = document.querySelector('.main-carousel');
+    var flkty = new Flickity( elem, {
+    // options
+    cellAlign: 'left',
+    wrapAround: true
+    });
+</script>
+
 </html>

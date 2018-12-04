@@ -7,7 +7,7 @@
     <section class="banner">
         <!-- <img src="imagenes/banner.png" alt="banner" class="fotobanner"> -->
         
-        <div class="BannerInfo">
+        <div class="BannerInfo animated fadeInUp">
             <h1> Accesorios Urbanos Sporty & Tech </h1>
             <a href="/shop">Shop now</a>
         </div>
@@ -72,8 +72,7 @@
             </div>
         </article>
 
-        <div class="ProductosSale">
-
+        <div class="ProductosSale ">
         @foreach($ofertas as $ofer)
 
             <article class="ProducS">
@@ -107,12 +106,11 @@
             </article>
 
             <div class="ProductosNew">
-
                 @foreach($news as $new)
-                <article class="ProducN">
-                    <img src="{{ asset($new['photo']) }}" alt=""> 
+                <article class="ProducN" >
+                    <img src="{{ asset($new['photo']) }}" alt="">    
                     <h3> {{ $new['marca'] }} </h3>
-                    <p>${{ $new['precio']* (1 - $new['oferta']/100) }}</p>    
+                    <p>${{ $new['precio']* (1 - $new['oferta']/100) }}</p> 
                 </article>
                 @endforeach
             </div>
