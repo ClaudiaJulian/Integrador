@@ -64,13 +64,14 @@ Route::get('/categoria/{id}','CategoriaController@show')->name('categoria');
 // nobasic - CARRO DE COMPRAS
 Route::get('/carro','CarroController@show');
 Route::get('/carro/create','CarroController@create');
-Route::get('/carro/edit','CarroController@edit');
-Route::get('/carro/trash','CarroController@trash');
-Route::get('/carro/total','CarroController@total');
+Route::get('/carro/cambiar','CarroController@cambiar');
+
+// Route::get('/carro/total','CarroController@total');
 Route::get('/carro/pagar','CarroController@pagar');
 
-
-Route::get('/carro/add/{id}','CarroController@show');
+Route::get('/carro/vaciar','CarroController@vaciar');
+Route::get('/carro/add/{id}','CarroController@add');
+Route::get('/carro/delete/{id}','CarroController@delete');
 
 
 

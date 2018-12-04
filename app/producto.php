@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use App\Categoria;
 use App\Tipo;
 use App\User;
+use App\Carro;
+use App\Nota;
 
 class producto extends Model
 {
@@ -23,5 +25,12 @@ class producto extends Model
         return $this->belongsToMany(User::class,'producto_user','producto_id','user_id');
     }
 
+    public function carro(){
+        return $this->belongsToMany(Carro::class,'carro_producto','producto_id','carro_id');
+    }
+
+    public function nota(){
+        return $this->belongsToMany(Nota::class,'nota_producto','producto_id','nota_id');
+    }
 
 }

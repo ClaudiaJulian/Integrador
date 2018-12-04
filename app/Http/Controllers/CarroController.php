@@ -1,56 +1,127 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Redirect;
 use Illuminate\Http\Request;
 use App\User;
 use App\Producto;
 use App\Carro;
 use App\Tipo;
+use Auth;
+use App\Nota;
+
 
 class CarroController extends Controller
 {
-    //https://www.youtube.com/watch?v=wUedT2BKf7Q
-    //https://es.stackoverflow.com/questions/178783/obtener-datos-de-un-usuario-en-laravel
-
-
-    // Route::get('/carro','CarroController@show');
-    // Route::get('/carro/create','CarroController@create');
-    // Route::get('/carro/edit','CarroController@edit');
-    // Route::get('/carro/trash','CarroController@trash');
-    // Route::get('/carro/total','CarroController@total');
-    // Route::get('/carro/pagar','CarroController@pagar');
-
-    public function __construct(){
-        if(!\Session::has('carro'))\Session::put('carro',array());
-    }    
 
     public function show(){
-        $carro = \Session::get('carro');
-        return view('carro')->with('carro',$carro);
+        if(Auth::user() !== null){
+            $arrayCarro = Nota::all();
+
+            if(!$arrayCarro->isEmpty()){
+                $total = 0;
+                foreach($arrayCarro as $item){
+                $total= $total + $item['precio']*$item['cantidad'];
+                }
+
+                return view('carro')->with('arrayCarro',$arrayCarro)->with('total',$total);
+            }
+                return \Redirect::to('/shop');
+        }
+        return view('Auth.login');       
+    }
+    
+     
+    public function add($id){
+        $producto = Producto::find($id);
+        // var_dump($producto['nombre']);
+
+        $nota = Nota::create([
+            'producto_id' => $producto['id'],
+            'nombre'=> $producto['nombre'],
+            'marca'=> $producto['marca'],
+            'precio' => $producto['precio']
+        ]);
+
+        // dd($nota);
+       
+       $arrayCarro = Nota::all();
+
+        $total = 0;
+        foreach($arrayCarro as $item){
+        $total= $total + $item['precio']*$item['cantidad'];
+        }
+
+        return view('carro')->with('arrayCarro',$arrayCarro)->with('total',$total);
     }
 
-    public function add($id){
-        $carro = \Session::get('carro');
-        $producto = Producto::find($id);
-        $carro[] = $producto;
-        \Session::put('carro',$carro);
-        return view('carro')->with('carro',$carro);
-    }
+    public function delete(Int $id){
+    
+        $arrayCarro = Nota::all();
+        
+        foreach($arrayCarro as $item){         
+            if($item['id'] === $id){                 
+                $item->delete();
+            } 
+        }
+    
+        $arrayCarro = Nota::all();
+
+        if(!$arrayCarro->isEmpty()){
+            $total = 0;
+            foreach($arrayCarro as $item){
+            $total= $total + $item['precio']*$item['cantidad'];
+            }
+            return view('carro')->with('arrayCarro',$arrayCarro)->with('total',$total);
+        }
+        
+        return \Redirect::to('/shop');
+}
+
 
     public function edit(){
         return view('carro');
     }
 
-    public function trash(){
-        return view('carro');
-    }
-    public function total(){
     
-        return view('carro');
-    }
+ 
+  
     public function pagar(){
-        return view('carro');
+        $arrayCarro = Nota::all();
+
+        $user=Auth::user()->id;
+
+
+        $carro = Carro::create([
+            'user_id' => $user,
+        ]);
+
+        // VER XQ NO ME SUBE TODOS LOS PRODUCTOS
+        foreach($arrayCarro as $producto){
+        $carro->producto()->sync($producto['producto_id']);
+        }    
+        
+        foreach($arrayCarro as $item){                      
+                $item->delete();
+        }
+
+        return \Redirect::to('/shop');
     }
+
+
+    public function vaciar(){
+        $arrayCarro = Nota::all();
+
+        foreach($arrayCarro as $item){                      
+                $item->delete();
+        }
+
+        return \Redirect::to('/shop');
+    }
+
+
+
+
+
 
 }
