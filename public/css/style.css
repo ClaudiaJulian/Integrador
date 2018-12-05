@@ -1100,6 +1100,144 @@ footer {
     font-weight: bold;
 }
 
+/* CARRO COMPRAS */
+
+.CarroCompras span h3{
+    text-transform: uppercase;
+    border-bottom: 1px solid black;
+    padding-bottom: 14px;
+    margin: 35px 15px;
+}
+
+.CarroCompras h4{
+    background-color: #e8f0f2;
+    padding: 20px 15px;
+    margin: 20px 0;
+    color: rgb(117, 100, 100)
+}
+
+.TablaCarro{
+    margin: 10px auto;
+    width: 100%;
+    padding: 0 15px; 
+}
+
+.TablaCarro td{
+    background-color: #f7f7f7;
+}
+
+.TablaCarro th:first-child{
+    text-align: left;
+}
+
+.TablaCarro th{
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    color: grey;
+}
+
+.InfoTabla h3{
+    margin-bottom: 0;
+}
+
+.InfoTabla p{
+    margin: 0;
+    color: #aaaaaa
+}
+
+.InfoTabla a{
+    color: red;
+    background-color: white;
+    display: inline-block;
+    padding: 6px 10px;
+    font-size: 0.9em;
+    text-align: left;
+    margin: 10px 0;
+}
+
+.FondoTablaProducto input{
+    width: 50px;
+}
+
+
+/* TOTAL PRODUCTOS */
+
+.CarroTotal {
+    text-align: center;
+    margin: 10px 0;
+    padding: 0 15px;
+    /* width: 400px; */
+
+    /* display: flex;
+    justify-content: end;
+    flex-direction: column; */
+}
+
+.InfoTotal{
+    /* background-color: #f7f7f7; */
+    padding: 15px;
+    border-top: 1px solid black;
+    text-align: center;
+    /* border-bottom: 1px solid black; */
+}
+
+.InfoTotal article{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin: 15px 0;
+    border-bottom: 1px dotted #CCC;
+}
+
+.BotonesTabla article{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end
+}
+
+.InfoTotal h3{
+    margin: 0;    
+}
+
+.InfoTotal p{
+    margin: 0 0 0 10px;
+}
+
+.CarroTotal a{
+    display: block;
+    padding: 15px;
+    width: 100%;
+    /* margin: 15px 0; */
+    border-radius: 5px;
+}
+
+.BtnPagar a{
+    background-color: rgb(58, 58, 58);
+    color: white;
+    width: 300px;
+}
+
+.BtnAgregar a{
+    background-color: #e8f0f2;
+    color: black;
+    width: 300px;
+    margin-top: 10px;
+}
+
+.BtnVaciar{
+    text-align: left;
+}
+
+.BtnVaciar a{
+    display: inline-block;
+    padding: 12px 50px;
+    /* width: 100%; */
+    margin: 15px 15px;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    border: 1px solid cadetblue
+}
+
 
 
 /*============================*/
@@ -1317,6 +1455,11 @@ footer {
     /* UN ACCESORIO */
     .ProductosOne{
         width: 50%;
+    }
+
+    .VistaCompras{
+        max-width: 900px;
+        margin: 0 auto
     }
 
 }
