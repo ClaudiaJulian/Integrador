@@ -51,13 +51,15 @@
                 <li><a href="/nav/contacto">contacto</a></li>
                 <li><a href="/nav/faq">faq</a></li>
             </ul>
-
-            <form class="buscador-completo" action="" method="post">
-                <input class="dato" type="text" placeholder=" producto" name="producto">
-                <button type="button">
+            <div class="buscador-completo">
+            {{-- <form class="buscador-completo" action="" method="post"> --}}
+                
+                <input  class="dato" type="text" placeholder=" producto" name="producto">
+                {{-- <button type="button"> --}}
                     <a href="" class="buscar"><i class="fas fa-search"></i></a>
-                </button>
-            </form>
+                {{-- </button> --}}
+            {{-- </form> --}}
+        </div>
         </nav>
     </header>
 </div>

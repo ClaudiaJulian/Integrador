@@ -26,13 +26,14 @@ class CarroController extends Controller
             }
             return view('carro')->with('arrayCarro',$arrayCarro)->with('superTotal',$superTotal);
             }
-                return \Redirect::to('/shop');
+            return \Redirect::to('/shop');
         }
         return view('Auth.login');       
     }
     
      
     public function add($id){
+        if(Auth::user() !== null){
         $producto = Producto::find($id);
         // var_dump($producto['nombre']);
 
@@ -46,15 +47,19 @@ class CarroController extends Controller
 
         // dd($nota);
        
-       $arrayCarro = Nota::all();
+        $arrayCarro = Nota::all();
 
-       $total = 0;
-       foreach($arrayCarro as $item){
-       $total= $total + $item['precio']*$item['cantidad'];
-       $superTotal = $total;
-       }
-       return view('carro')->with('arrayCarro',$arrayCarro)->with('superTotal',$superTotal);
+        $total = 0;
+        foreach($arrayCarro as $item){
+        $total= $total + $item['precio']*$item['cantidad'];
+        $superTotal = $total;
+        }
+        return \Redirect::to('/carro');
+        // return view('carro')->with('arrayCarro',$arrayCarro)->with('superTotal',$superTotal);
+        }
+        return view('Auth.login');
     }
+
 
     public function delete(Int $id){
     
@@ -74,7 +79,8 @@ class CarroController extends Controller
             $total= $total + $item['precio']*$item['cantidad'];
             $superTotal = $total;
             }
-            return view('carro')->with('arrayCarro',$arrayCarro)->with('superTotal',$superTotal);
+            return \Redirect::to('/carro');  
+            // return view('carro')->with('arrayCarro',$arrayCarro)->with('superTotal',$superTotal);
         }
         
         return \Redirect::to('/shop');

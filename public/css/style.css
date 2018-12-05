@@ -128,8 +128,8 @@ input::placeholder {
 
 .buscador-completo input {
     width: 70%;
-    border: solid grey 1px;
-    border-radius: 5px;
+    /* border: solid grey 1px; */
+    /* border-radius: 5px; */
 }
 
 .buscador-completo button {
