@@ -20,11 +20,11 @@ class CarroController extends Controller
 
             if(!$arrayCarro->isEmpty()){
                 $total = 0;
-                foreach($arrayCarro as $item){
-                $total= $total + $item['precio']*$item['cantidad'];
-                }
-
-                return view('carro')->with('arrayCarro',$arrayCarro)->with('total',$total);
+            foreach($arrayCarro as $item){
+            $total= $total + $item['precio']*$item['cantidad'];
+            $superTotal = $total;
+            }
+            return view('carro')->with('arrayCarro',$arrayCarro)->with('superTotal',$superTotal);
             }
                 return \Redirect::to('/shop');
         }
@@ -40,19 +40,20 @@ class CarroController extends Controller
             'producto_id' => $producto['id'],
             'nombre'=> $producto['nombre'],
             'marca'=> $producto['marca'],
-            'precio' => $producto['precio']
+            'precio' => $producto['precio'],
+            'photo' => $producto['photo']
         ]);
 
         // dd($nota);
        
        $arrayCarro = Nota::all();
 
-        $total = 0;
-        foreach($arrayCarro as $item){
-        $total= $total + $item['precio']*$item['cantidad'];
-        }
-
-        return view('carro')->with('arrayCarro',$arrayCarro)->with('total',$total);
+       $total = 0;
+       foreach($arrayCarro as $item){
+       $total= $total + $item['precio']*$item['cantidad'];
+       $superTotal = $total;
+       }
+       return view('carro')->with('arrayCarro',$arrayCarro)->with('superTotal',$superTotal);
     }
 
     public function delete(Int $id){
@@ -71,25 +72,42 @@ class CarroController extends Controller
             $total = 0;
             foreach($arrayCarro as $item){
             $total= $total + $item['precio']*$item['cantidad'];
+            $superTotal = $total;
             }
-            return view('carro')->with('arrayCarro',$arrayCarro)->with('total',$total);
+            return view('carro')->with('arrayCarro',$arrayCarro)->with('superTotal',$superTotal);
         }
         
         return \Redirect::to('/shop');
 }
 
 
-    public function edit(){
-        return view('carro');
+    public function edit(Request $request, $id){
+        // dd($request['cantidad']);
+
+        $producto = Nota::find($id);
+
+        $producto->cantidad = $request['cantidad'];
+
+        $producto->save();
+
+        $arrayCarro = Nota::all();
+
+            $total = 0;
+            foreach($arrayCarro as $item){
+            $total= $total + $item['precio']*$item['cantidad'];
+            $superTotal = $total;
+            }
+            return view('carro')->with('arrayCarro',$arrayCarro)->with('superTotal',$superTotal);
+           
+           
     }
 
     
- 
-  
     public function pagar(){
-        $arrayCarro = Nota::all();
 
         $user=Auth::user()->id;
+        $arrayCarro = Nota::all();
+        // $arrayCarro = Nota::where('user_id', $user)->get();
 
 
         $carro = Carro::create([
@@ -97,9 +115,7 @@ class CarroController extends Controller
         ]);
 
         // VER XQ NO ME SUBE TODOS LOS PRODUCTOS
-        foreach($arrayCarro as $producto){
-        $carro->producto()->sync($producto['producto_id']);
-        }    
+        $carro->producto()->sync($arrayCarro->pluck("id"));
         
         foreach($arrayCarro as $item){                      
                 $item->delete();

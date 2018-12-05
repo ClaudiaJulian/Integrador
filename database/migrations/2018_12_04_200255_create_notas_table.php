@@ -20,6 +20,7 @@ class CreateNotasTable extends Migration
             $table->string('marca');
             $table->integer('cantidad')->default('1');
             $table->integer('precio');
+            $table->string('photo');
             $table->timestamps();
         });
     }
